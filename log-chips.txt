@@ -1,0 +1,866 @@
+Linear kernel, c = 1: F = 0.6327683615819211
+Linear kernel, c = 2: F = 0.6384819425955227
+Linear kernel, c = 3: F = 0.6384819425955227
+Linear kernel, c = 4: F = 0.6384819425955227
+Linear kernel, c = 5: F = 0.6384819425955227
+Linear kernel, c = 6: F = 0.6384819425955227
+Linear kernel, c = 7: F = 0.6384819425955227
+Linear kernel, c = 8: F = 0.6384819425955227
+Linear kernel, c = 9: F = 0.6384819425955227
+Linear kernel, c = 10: F = 0.6384819425955227
+Linear kernel, c = 11: F = 0.6384819425955227
+Linear kernel, c = 12: F = 0.6384819425955227
+Linear kernel, c = 13: F = 0.6384819425955227
+Linear kernel, c = 14: F = 0.6384819425955227
+Linear kernel, optimal c = 2: F = 0.6384819425955227
+2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 0,000000000 1,756357057 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 1,247612259 2,000000000 0,000000000 0,508744799 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 0,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 2,000000000 1,096881843 
+
+Polynomial with degree equal to p = 2 kernel, c = 1: F = 0.6995105960924276
+Polynomial with degree equal to p = 2 kernel, c = 2: F = 0.7240035645557069
+Polynomial with degree equal to p = 2 kernel, c = 3: F = 0.7287275230147122
+Polynomial with degree equal to p = 2 kernel, c = 4: F = 0.7288615356338989
+Polynomial with degree equal to p = 2 kernel, c = 5: F = 0.7105246557592221
+Polynomial with degree equal to p = 2 kernel, c = 6: F = 0.7159772209127357
+Polynomial with degree equal to p = 2 kernel, c = 7: F = 0.7275898039984864
+Polynomial with degree equal to p = 2 kernel, c = 8: F = 0.7275898039984864
+Polynomial with degree equal to p = 2 kernel, c = 9: F = 0.7275898039984864
+Polynomial with degree equal to p = 2 kernel, c = 10: F = 0.7275898039984864
+Polynomial with degree equal to p = 2 kernel, c = 11: F = 0.7275898039984864
+Polynomial with degree equal to p = 2 kernel, c = 12: F = 0.7275898039984864
+Polynomial with degree equal to p = 2 kernel, c = 13: F = 0.7275898039984864
+Polynomial with degree equal to p = 2 kernel, c = 14: F = 0.7275898039984864
+Polynomial with degree equal to p = 3 kernel, c = 1: F = 0.6812225954511654
+Polynomial with degree equal to p = 3 kernel, c = 2: F = 0.6812225954511654
+Polynomial with degree equal to p = 3 kernel, c = 3: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 4: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 5: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 6: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 7: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 8: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 9: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 10: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 11: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 12: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 13: F = 0.6864767059237968
+Polynomial with degree equal to p = 3 kernel, c = 14: F = 0.6864767059237968
+Polynomial with degree equal to p = 4 kernel, c = 1: F = 0.6995105960924276
+Polynomial with degree equal to p = 4 kernel, c = 2: F = 0.7506984970899215
+Polynomial with degree equal to p = 4 kernel, c = 3: F = 0.7529643461944833
+Polynomial with degree equal to p = 4 kernel, c = 4: F = 0.7579777799404158
+Polynomial with degree equal to p = 4 kernel, c = 5: F = 0.7579777799404158
+Polynomial with degree equal to p = 4 kernel, c = 6: F = 0.7393091855606214
+Polynomial with degree equal to p = 4 kernel, c = 7: F = 0.7275898039984864
+Polynomial with degree equal to p = 4 kernel, c = 8: F = 0.7385612884707374
+Polynomial with degree equal to p = 4 kernel, c = 9: F = 0.7441863760304851
+Polynomial with degree equal to p = 4 kernel, c = 10: F = 0.7441863760304851
+Polynomial with degree equal to p = 4 kernel, c = 11: F = 0.7441863760304851
+Polynomial with degree equal to p = 4 kernel, c = 12: F = 0.7441863760304851
+Polynomial with degree equal to p = 4 kernel, c = 13: F = 0.7385612884707374
+Polynomial with degree equal to p = 4 kernel, c = 14: F = 0.7385612884707374
+Polynomial with degree equal to p = 5 kernel, c = 1: F = 0.6966981983637175
+Polynomial with degree equal to p = 5 kernel, c = 2: F = 0.6934460247497009
+Polynomial with degree equal to p = 5 kernel, c = 3: F = 0.6982956791250086
+Polynomial with degree equal to p = 5 kernel, c = 4: F = 0.7030854911929297
+Polynomial with degree equal to p = 5 kernel, c = 5: F = 0.7030854911929297
+Polynomial with degree equal to p = 5 kernel, c = 6: F = 0.6982956791250086
+Polynomial with degree equal to p = 5 kernel, c = 7: F = 0.6852261030673163
+Polynomial with degree equal to p = 5 kernel, c = 8: F = 0.6852261030673163
+Polynomial with degree equal to p = 5 kernel, c = 9: F = 0.6852261030673163
+Polynomial with degree equal to p = 5 kernel, c = 10: F = 0.6852261030673163
+Polynomial with degree equal to p = 5 kernel, c = 11: F = 0.6852261030673163
+Polynomial with degree equal to p = 5 kernel, c = 12: F = 0.6852261030673163
+Polynomial with degree equal to p = 5 kernel, c = 13: F = 0.6852261030673163
+Polynomial with degree equal to p = 5 kernel, c = 14: F = 0.6852261030673163
+Polynomial with degree equal to p = 6 kernel, c = 1: F = 0.7171693318787751
+Polynomial with degree equal to p = 6 kernel, c = 2: F = 0.7539036756424518
+Polynomial with degree equal to p = 6 kernel, c = 3: F = 0.7529643461944833
+Polynomial with degree equal to p = 6 kernel, c = 4: F = 0.7579777799404158
+Polynomial with degree equal to p = 6 kernel, c = 5: F = 0.7511332554118535
+Polynomial with degree equal to p = 6 kernel, c = 6: F = 0.7340472787378637
+Polynomial with degree equal to p = 6 kernel, c = 7: F = 0.7288615356338989
+Polynomial with degree equal to p = 6 kernel, c = 8: F = 0.7288615356338989
+Polynomial with degree equal to p = 6 kernel, c = 9: F = 0.7288615356338989
+Polynomial with degree equal to p = 6 kernel, c = 10: F = 0.7288615356338989
+Polynomial with degree equal to p = 6 kernel, c = 11: F = 0.7288615356338989
+Polynomial with degree equal to p = 6 kernel, c = 12: F = 0.7340472787378637
+Polynomial with degree equal to p = 6 kernel, c = 13: F = 0.7340472787378637
+Polynomial with degree equal to p = 6 kernel, c = 14: F = 0.7393091855606214
+Polynomial with degree equal to p = 7 kernel, c = 1: F = 0.7065842225227335
+Polynomial with degree equal to p = 7 kernel, c = 2: F = 0.7030854911929297
+Polynomial with degree equal to p = 7 kernel, c = 3: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 4: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 5: F = 0.7125149845787937
+Polynomial with degree equal to p = 7 kernel, c = 6: F = 0.7125149845787937
+Polynomial with degree equal to p = 7 kernel, c = 7: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 8: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 9: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 10: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 11: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 12: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 13: F = 0.7078228118225763
+Polynomial with degree equal to p = 7 kernel, c = 14: F = 0.7078228118225763
+Polynomial with degree equal to p = 8 kernel, c = 1: F = 0.7125149845787937
+Polynomial with degree equal to p = 8 kernel, c = 2: F = 0.735553423421471
+Polynomial with degree equal to p = 8 kernel, c = 3: F = 0.7585371804371155
+Polynomial with degree equal to p = 8 kernel, c = 4: F = 0.7679047849395205
+Polynomial with degree equal to p = 8 kernel, c = 5: F = 0.7431212854941669
+Polynomial with degree equal to p = 8 kernel, c = 6: F = 0.7480140893360943
+Polynomial with degree equal to p = 8 kernel, c = 7: F = 0.7408643634314449
+Polynomial with degree equal to p = 8 kernel, c = 8: F = 0.745962590176377
+Polynomial with degree equal to p = 8 kernel, c = 9: F = 0.745962590176377
+Polynomial with degree equal to p = 8 kernel, c = 10: F = 0.7511332554118535
+Polynomial with degree equal to p = 8 kernel, c = 11: F = 0.7511332554118535
+Polynomial with degree equal to p = 8 kernel, c = 12: F = 0.7511332554118535
+Polynomial with degree equal to p = 8 kernel, c = 13: F = 0.7393091855606214
+Polynomial with degree equal to p = 8 kernel, c = 14: F = 0.7393091855606214
+Polynomial with degree equal to p = 9 kernel, c = 1: F = 0.7065842225227335
+Polynomial with degree equal to p = 9 kernel, c = 2: F = 0.7078228118225763
+Polynomial with degree equal to p = 9 kernel, c = 3: F = 0.7125149845787937
+Polynomial with degree equal to p = 9 kernel, c = 4: F = 0.7125149845787937
+Polynomial with degree equal to p = 9 kernel, c = 5: F = 0.7171693318787751
+Polynomial with degree equal to p = 9 kernel, c = 6: F = 0.7171693318787751
+Polynomial with degree equal to p = 9 kernel, c = 7: F = 0.7171693318787751
+Polynomial with degree equal to p = 9 kernel, c = 8: F = 0.7171693318787751
+Polynomial with degree equal to p = 9 kernel, c = 9: F = 0.7171693318787751
+Polynomial with degree equal to p = 9 kernel, c = 10: F = 0.7217931414131701
+Polynomial with degree equal to p = 9 kernel, c = 11: F = 0.7217931414131701
+Polynomial with degree equal to p = 9 kernel, c = 12: F = 0.7217931414131701
+Polynomial with degree equal to p = 9 kernel, c = 13: F = 0.7217931414131701
+Polynomial with degree equal to p = 9 kernel, c = 14: F = 0.7217931414131701
+Polynomial with degree equal to p = 10 kernel, c = 1: F = 0.7030854911929297
+Polynomial with degree equal to p = 10 kernel, c = 2: F = 0.7309780450828545
+Polynomial with degree equal to p = 10 kernel, c = 3: F = 0.7401268078405371
+Polynomial with degree equal to p = 10 kernel, c = 4: F = 0.7492951784525382
+Polynomial with degree equal to p = 10 kernel, c = 5: F = 0.7539036756424518
+Polynomial with degree equal to p = 10 kernel, c = 6: F = 0.7632021225292833
+Polynomial with degree equal to p = 10 kernel, c = 7: F = 0.7726512958969455
+Polynomial with degree equal to p = 10 kernel, c = 8: F = 0.7602874821464393
+Polynomial with degree equal to p = 10 kernel, c = 9: F = 0.7602874821464393
+Polynomial with degree equal to p = 10 kernel, c = 10: F = 0.7602874821464393
+Polynomial with degree equal to p = 10 kernel, c = 11: F = 0.7480140893360943
+Polynomial with degree equal to p = 10 kernel, c = 12: F = 0.7431212854941669
+Polynomial with degree equal to p = 10 kernel, c = 13: F = 0.7431212854941669
+Polynomial with degree equal to p = 10 kernel, c = 14: F = 0.7358331078123799
+Polynomial with degree equal to p = 11 kernel, c = 1: F = 0.701679599754952
+Polynomial with degree equal to p = 11 kernel, c = 2: F = 0.7078228118225763
+Polynomial with degree equal to p = 11 kernel, c = 3: F = 0.7078228118225763
+Polynomial with degree equal to p = 11 kernel, c = 4: F = 0.7171693318787751
+Polynomial with degree equal to p = 11 kernel, c = 5: F = 0.7171693318787751
+Polynomial with degree equal to p = 11 kernel, c = 6: F = 0.7217931414131701
+Polynomial with degree equal to p = 11 kernel, c = 7: F = 0.72639365288073
+Polynomial with degree equal to p = 11 kernel, c = 8: F = 0.7217931414131701
+Polynomial with degree equal to p = 11 kernel, c = 9: F = 0.7217931414131701
+Polynomial with degree equal to p = 11 kernel, c = 10: F = 0.7217931414131701
+Polynomial with degree equal to p = 11 kernel, c = 11: F = 0.7217931414131701
+Polynomial with degree equal to p = 11 kernel, c = 12: F = 0.7217931414131701
+Polynomial with degree equal to p = 11 kernel, c = 13: F = 0.7217931414131701
+Polynomial with degree equal to p = 11 kernel, c = 14: F = 0.72639365288073
+Polynomial with degree equal to p = 12 kernel, c = 1: F = 0.6982956791250086
+Polynomial with degree equal to p = 12 kernel, c = 2: F = 0.7217931414131701
+Polynomial with degree equal to p = 12 kernel, c = 3: F = 0.7309780450828545
+Polynomial with degree equal to p = 12 kernel, c = 4: F = 0.7309780450828545
+Polynomial with degree equal to p = 12 kernel, c = 5: F = 0.735553423421471
+Polynomial with degree equal to p = 12 kernel, c = 6: F = 0.7447051212481199
+Polynomial with degree equal to p = 12 kernel, c = 7: F = 0.7447051212481199
+Polynomial with degree equal to p = 12 kernel, c = 8: F = 0.7539036756424518
+Polynomial with degree equal to p = 12 kernel, c = 9: F = 0.7585371804371155
+Polynomial with degree equal to p = 12 kernel, c = 10: F = 0.7632021225292833
+Polynomial with degree equal to p = 12 kernel, c = 11: F = 0.7632021225292833
+Polynomial with degree equal to p = 12 kernel, c = 12: F = 0.7506984970899215
+Polynomial with degree equal to p = 12 kernel, c = 13: F = 0.7506984970899215
+Polynomial with degree equal to p = 12 kernel, c = 14: F = 0.7506984970899215
+Polynomial with degree equal to p = 13 kernel, c = 1: F = 0.6966981983637175
+Polynomial with degree equal to p = 13 kernel, c = 2: F = 0.6934460247497009
+Polynomial with degree equal to p = 13 kernel, c = 3: F = 0.7078228118225763
+Polynomial with degree equal to p = 13 kernel, c = 4: F = 0.7125149845787937
+Polynomial with degree equal to p = 13 kernel, c = 5: F = 0.7125149845787937
+Polynomial with degree equal to p = 13 kernel, c = 6: F = 0.7125149845787937
+Polynomial with degree equal to p = 13 kernel, c = 7: F = 0.7125149845787937
+Polynomial with degree equal to p = 13 kernel, c = 8: F = 0.7171693318787751
+Polynomial with degree equal to p = 13 kernel, c = 9: F = 0.7171693318787751
+Polynomial with degree equal to p = 13 kernel, c = 10: F = 0.7171693318787751
+Polynomial with degree equal to p = 13 kernel, c = 11: F = 0.7171693318787751
+Polynomial with degree equal to p = 13 kernel, c = 12: F = 0.7171693318787751
+Polynomial with degree equal to p = 13 kernel, c = 13: F = 0.7171693318787751
+Polynomial with degree equal to p = 13 kernel, c = 14: F = 0.7217931414131701
+Polynomial with degree equal to p = 14 kernel, c = 1: F = 0.7065842225227335
+Polynomial with degree equal to p = 14 kernel, c = 2: F = 0.7125149845787937
+Polynomial with degree equal to p = 14 kernel, c = 3: F = 0.72639365288073
+Polynomial with degree equal to p = 14 kernel, c = 4: F = 0.72639365288073
+Polynomial with degree equal to p = 14 kernel, c = 5: F = 0.7309780450828545
+Polynomial with degree equal to p = 14 kernel, c = 6: F = 0.7309780450828545
+Polynomial with degree equal to p = 14 kernel, c = 7: F = 0.7309780450828545
+Polynomial with degree equal to p = 14 kernel, c = 8: F = 0.7401268078405371
+Polynomial with degree equal to p = 14 kernel, c = 9: F = 0.7401268078405371
+Polynomial with degree equal to p = 14 kernel, c = 10: F = 0.7401268078405371
+Polynomial with degree equal to p = 14 kernel, c = 11: F = 0.7492951784525382
+Polynomial with degree equal to p = 14 kernel, c = 12: F = 0.7492951784525382
+Polynomial with degree equal to p = 14 kernel, c = 13: F = 0.7492951784525382
+Polynomial with degree equal to p = 14 kernel, c = 14: F = 0.7492951784525382
+Polynomial kernel, optimal p = 10, c = 7: F = 0.7726512958969455
+7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 0,000000000 0,000000000 0,000000000 0,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 0,376638365 0,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 7,000000000 7,000000000 0,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 0,000000000 7,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 7,000000000 7,000000000 7,000000000 0,000000000 7,000000000 5,101810318 0,000000000 7,000000000 0,000000000 0,000000000 7,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 0,000000000 7,000000000 6,560614917 0,000000000 7,000000000 7,000000000 7,000000000 2,236982835 0,000000000 0,000000000 0,477230295 0,000000000 0,000000000 0,000000000 0,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 7,000000000 0,000000000 0,000000000 7,000000000 1,094028342 
+
+Polynomial with degree less than p = 1 kernel, c = 1: F = 0.6327683615819211
+Polynomial with degree less than p = 1 kernel, c = 2: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 3: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 4: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 5: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 6: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 7: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 8: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 9: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 10: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 11: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 12: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 13: F = 0.6384819425955227
+Polynomial with degree less than p = 1 kernel, c = 14: F = 0.6384819425955227
+Polynomial with degree less than p = 2 kernel, c = 1: F = 0.7382800196352217
+Polynomial with degree less than p = 2 kernel, c = 2: F = 0.6930809447721585
+Polynomial with degree less than p = 2 kernel, c = 3: F = 0.710634717564206
+Polynomial with degree less than p = 2 kernel, c = 4: F = 0.722871873426001
+Polynomial with degree less than p = 2 kernel, c = 5: F = 0.722871873426001
+Polynomial with degree less than p = 2 kernel, c = 6: F = 0.7121655973628679
+Polynomial with degree less than p = 2 kernel, c = 7: F = 0.7185791337941867
+Polynomial with degree less than p = 2 kernel, c = 8: F = 0.7185791337941867
+Polynomial with degree less than p = 2 kernel, c = 9: F = 0.7185791337941867
+Polynomial with degree less than p = 2 kernel, c = 10: F = 0.7251139981072012
+Polynomial with degree less than p = 2 kernel, c = 11: F = 0.7121655973628679
+Polynomial with degree less than p = 2 kernel, c = 12: F = 0.6951687367740502
+Polynomial with degree less than p = 2 kernel, c = 13: F = 0.7081260258551926
+Polynomial with degree less than p = 2 kernel, c = 14: F = 0.7081260258551926
+Polynomial with degree less than p = 3 kernel, c = 1: F = 0.7291620465705688
+Polynomial with degree less than p = 3 kernel, c = 2: F = 0.7121655973628679
+Polynomial with degree less than p = 3 kernel, c = 3: F = 0.6988306782490592
+Polynomial with degree less than p = 3 kernel, c = 4: F = 0.7421017509605826
+Polynomial with degree less than p = 3 kernel, c = 5: F = 0.7317730112443045
+Polynomial with degree less than p = 3 kernel, c = 6: F = 0.7115185412187588
+Polynomial with degree less than p = 3 kernel, c = 7: F = 0.7015959721571066
+Polynomial with degree less than p = 3 kernel, c = 8: F = 0.7015959721571066
+Polynomial with degree less than p = 3 kernel, c = 9: F = 0.7015959721571066
+Polynomial with degree less than p = 3 kernel, c = 10: F = 0.7115185412187588
+Polynomial with degree less than p = 3 kernel, c = 11: F = 0.7045972713804183
+Polynomial with degree less than p = 3 kernel, c = 12: F = 0.7045972713804183
+Polynomial with degree less than p = 3 kernel, c = 13: F = 0.7045972713804183
+Polynomial with degree less than p = 3 kernel, c = 14: F = 0.7045972713804183
+Polynomial with degree less than p = 4 kernel, c = 1: F = 0.7166972574607994
+Polynomial with degree less than p = 4 kernel, c = 2: F = 0.7385587521003727
+Polynomial with degree less than p = 4 kernel, c = 3: F = 0.6821674508701101
+Polynomial with degree less than p = 4 kernel, c = 4: F = 0.6748400363869745
+Polynomial with degree less than p = 4 kernel, c = 5: F = 0.6676466461151211
+Polynomial with degree less than p = 4 kernel, c = 6: F = 0.6605853862350671
+Polynomial with degree less than p = 4 kernel, c = 7: F = 0.6605853862350671
+Polynomial with degree less than p = 4 kernel, c = 8: F = 0.6536541094100259
+Polynomial with degree less than p = 4 kernel, c = 9: F = 0.6638353124096185
+Polynomial with degree less than p = 4 kernel, c = 10: F = 0.6571606226776908
+Polynomial with degree less than p = 4 kernel, c = 11: F = 0.6571606226776908
+Polynomial with degree less than p = 4 kernel, c = 12: F = 0.6638353124096185
+Polynomial with degree less than p = 4 kernel, c = 13: F = 0.6638353124096185
+Polynomial with degree less than p = 4 kernel, c = 14: F = 0.6638353124096185
+Polynomial with degree less than p = 5 kernel, c = 1: F = 0.7251139981072012
+Polynomial with degree less than p = 5 kernel, c = 2: F = 0.6775631957778627
+Polynomial with degree less than p = 5 kernel, c = 3: F = 0.6706353015537339
+Polynomial with degree less than p = 5 kernel, c = 4: F = 0.6571606226776908
+Polynomial with degree less than p = 5 kernel, c = 5: F = 0.6718655312522038
+Polynomial with degree less than p = 5 kernel, c = 6: F = 0.6718655312522038
+Polynomial with degree less than p = 5 kernel, c = 7: F = 0.6656732280684804
+Polynomial with degree less than p = 5 kernel, c = 8: F = 0.6316531414904164
+Polynomial with degree less than p = 5 kernel, c = 9: F = 0.6316531414904164
+Polynomial with degree less than p = 5 kernel, c = 10: F = 0.6316531414904164
+Polynomial with degree less than p = 5 kernel, c = 11: F = 0.6316531414904164
+Polynomial with degree less than p = 5 kernel, c = 12: F = 0.6208534494632918
+Polynomial with degree less than p = 5 kernel, c = 13: F = 0.6208534494632918
+Polynomial with degree less than p = 5 kernel, c = 14: F = 0.6208534494632918
+Polynomial with degree less than p = 6 kernel, c = 1: F = 0.7015959721571066
+Polynomial with degree less than p = 6 kernel, c = 2: F = 0.6760425309863951
+Polynomial with degree less than p = 6 kernel, c = 3: F = 0.6208534494632918
+Polynomial with degree less than p = 6 kernel, c = 4: F = 0.6166206253656294
+Polynomial with degree less than p = 6 kernel, c = 5: F = 0.6166206253656294
+Polynomial with degree less than p = 6 kernel, c = 6: F = 0.6166206253656294
+Polynomial with degree less than p = 6 kernel, c = 7: F = 0.610177061490829
+Polynomial with degree less than p = 6 kernel, c = 8: F = 0.610177061490829
+Polynomial with degree less than p = 6 kernel, c = 9: F = 0.610177061490829
+Polynomial with degree less than p = 6 kernel, c = 10: F = 0.6271765125506217
+Polynomial with degree less than p = 6 kernel, c = 11: F = 0.6401715937838629
+Polynomial with degree less than p = 6 kernel, c = 12: F = 0.6401715937838629
+Polynomial with degree less than p = 6 kernel, c = 13: F = 0.6401715937838629
+Polynomial with degree less than p = 6 kernel, c = 14: F = 0.646850405705197
+Polynomial with degree less than p = 7 kernel, c = 1: F = 0.6401715937838629
+Polynomial with degree less than p = 7 kernel, c = 2: F = 0.6336147124425295
+Polynomial with degree less than p = 7 kernel, c = 3: F = 0.6401715937838629
+Polynomial with degree less than p = 7 kernel, c = 4: F = 0.6401715937838629
+Polynomial with degree less than p = 7 kernel, c = 5: F = 0.6401715937838629
+Polynomial with degree less than p = 7 kernel, c = 6: F = 0.6506083567377661
+Polynomial with degree less than p = 7 kernel, c = 7: F = 0.6506083567377661
+Polynomial with degree less than p = 7 kernel, c = 8: F = 0.6548622078481453
+Polynomial with degree less than p = 7 kernel, c = 9: F = 0.6611736547028135
+Polynomial with degree less than p = 7 kernel, c = 10: F = 0.6611736547028135
+Polynomial with degree less than p = 7 kernel, c = 11: F = 0.6611736547028135
+Polynomial with degree less than p = 7 kernel, c = 12: F = 0.6718655312522038
+Polynomial with degree less than p = 7 kernel, c = 13: F = 0.6826819905877902
+Polynomial with degree less than p = 7 kernel, c = 14: F = 0.6826819905877902
+Polynomial with degree less than p = 8 kernel, c = 1: F = 0.6401715937838629
+Polynomial with degree less than p = 8 kernel, c = 2: F = 0.6676015920302092
+Polynomial with degree less than p = 8 kernel, c = 3: F = 0.7015869543741797
+Polynomial with degree less than p = 8 kernel, c = 4: F = 0.6951687367740502
+Polynomial with degree less than p = 8 kernel, c = 5: F = 0.6826819905877902
+Polynomial with degree less than p = 8 kernel, c = 6: F = 0.6826819905877902
+Polynomial with degree less than p = 8 kernel, c = 7: F = 0.6718655312522038
+Polynomial with degree less than p = 8 kernel, c = 8: F = 0.6718655312522038
+Polynomial with degree less than p = 8 kernel, c = 9: F = 0.6826819905877902
+Polynomial with degree less than p = 8 kernel, c = 10: F = 0.6888682201803359
+Polynomial with degree less than p = 8 kernel, c = 11: F = 0.7015869543741797
+Polynomial with degree less than p = 8 kernel, c = 12: F = 0.7015869543741797
+Polynomial with degree less than p = 8 kernel, c = 13: F = 0.7015869543741797
+Polynomial with degree less than p = 8 kernel, c = 14: F = 0.7081260258551926
+Polynomial with degree less than p = 9 kernel, c = 1: F = 0.6996899821230567
+Polynomial with degree less than p = 9 kernel, c = 2: F = 0.6951687367740502
+Polynomial with degree less than p = 9 kernel, c = 3: F = 0.6845944487480442
+Polynomial with degree less than p = 9 kernel, c = 4: F = 0.6845944487480442
+Polynomial with degree less than p = 9 kernel, c = 5: F = 0.7015869543741797
+Polynomial with degree less than p = 9 kernel, c = 6: F = 0.7081260258551926
+Polynomial with degree less than p = 9 kernel, c = 7: F = 0.7015869543741797
+Polynomial with degree less than p = 9 kernel, c = 8: F = 0.7121655973628679
+Polynomial with degree less than p = 9 kernel, c = 9: F = 0.7121655973628679
+Polynomial with degree less than p = 9 kernel, c = 10: F = 0.7081260258551926
+Polynomial with degree less than p = 9 kernel, c = 11: F = 0.7081260258551926
+Polynomial with degree less than p = 9 kernel, c = 12: F = 0.714788848259138
+Polynomial with degree less than p = 9 kernel, c = 13: F = 0.714788848259138
+Polynomial with degree less than p = 9 kernel, c = 14: F = 0.7045972713804183
+Polynomial with degree less than p = 10 kernel, c = 1: F = 0.6951687367740502
+Polynomial with degree less than p = 10 kernel, c = 2: F = 0.6911378180368937
+Polynomial with degree less than p = 10 kernel, c = 3: F = 0.6888682201803359
+Polynomial with degree less than p = 10 kernel, c = 4: F = 0.6951687367740502
+Polynomial with degree less than p = 10 kernel, c = 5: F = 0.6911378180368937
+Polynomial with degree less than p = 10 kernel, c = 6: F = 0.6978045192812317
+Polynomial with degree less than p = 10 kernel, c = 7: F = 0.6775631957778627
+Polynomial with degree less than p = 10 kernel, c = 8: F = 0.6605853862350671
+Polynomial with degree less than p = 10 kernel, c = 9: F = 0.6506718897271213
+Polynomial with degree less than p = 10 kernel, c = 10: F = 0.6482293165582141
+Polynomial with degree less than p = 10 kernel, c = 11: F = 0.6387312642221642
+Polynomial with degree less than p = 10 kernel, c = 12: F = 0.6387312642221642
+Polynomial with degree less than p = 10 kernel, c = 13: F = 0.6482293165582141
+Polynomial with degree less than p = 10 kernel, c = 14: F = 0.6482293165582141
+Polynomial with degree less than p = 11 kernel, c = 1: F = 0.6888682201803359
+Polynomial with degree less than p = 11 kernel, c = 2: F = 0.6845944487480442
+Polynomial with degree less than p = 11 kernel, c = 3: F = 0.6846213387153945
+Polynomial with degree less than p = 11 kernel, c = 4: F = 0.65786821424572
+Polynomial with degree less than p = 11 kernel, c = 5: F = 0.65786821424572
+Polynomial with degree less than p = 11 kernel, c = 6: F = 0.6482293165582141
+Polynomial with degree less than p = 11 kernel, c = 7: F = 0.6387312642221642
+Polynomial with degree less than p = 11 kernel, c = 8: F = 0.6124113701744411
+Polynomial with degree less than p = 11 kernel, c = 9: F = 0.6217648127181308
+Polynomial with degree less than p = 11 kernel, c = 10: F = 0.6201623468784347
+Polynomial with degree less than p = 11 kernel, c = 11: F = 0.629375252073148
+Polynomial with degree less than p = 11 kernel, c = 12: F = 0.629375252073148
+Polynomial with degree less than p = 11 kernel, c = 13: F = 0.6217648127181308
+Polynomial with degree less than p = 11 kernel, c = 14: F = 0.6217648127181308
+Polynomial with degree less than p = 12 kernel, c = 1: F = 0.6911378180368937
+Polynomial with degree less than p = 12 kernel, c = 2: F = 0.6775631957778627
+Polynomial with degree less than p = 12 kernel, c = 3: F = 0.6676466461151211
+Polynomial with degree less than p = 12 kernel, c = 4: F = 0.6217648127181308
+Polynomial with degree less than p = 12 kernel, c = 5: F = 0.6124113701744411
+Polynomial with degree less than p = 12 kernel, c = 6: F = 0.6124113701744411
+Polynomial with degree less than p = 12 kernel, c = 7: F = 0.6217648127181308
+Polynomial with degree less than p = 12 kernel, c = 8: F = 0.5973219211324345
+Polynomial with degree less than p = 12 kernel, c = 9: F = 0.6069524858253874
+Polynomial with degree less than p = 12 kernel, c = 10: F = 0.6266294564445859
+Polynomial with degree less than p = 12 kernel, c = 11: F = 0.6196912538984809
+Polynomial with degree less than p = 12 kernel, c = 12: F = 0.5997471836854343
+Polynomial with degree less than p = 12 kernel, c = 13: F = 0.6096513188965678
+Polynomial with degree less than p = 12 kernel, c = 14: F = 0.6096513188965678
+Polynomial with degree less than p = 13 kernel, c = 1: F = 0.6808200118937168
+Polynomial with degree less than p = 13 kernel, c = 2: F = 0.6408963507507843
+Polynomial with degree less than p = 13 kernel, c = 3: F = 0.6047983460925762
+Polynomial with degree less than p = 13 kernel, c = 4: F = 0.5997471836854343
+Polynomial with degree less than p = 13 kernel, c = 5: F = 0.6096513188965678
+Polynomial with degree less than p = 13 kernel, c = 6: F = 0.6096513188965678
+Polynomial with degree less than p = 13 kernel, c = 7: F = 0.5997471836854343
+Polynomial with degree less than p = 13 kernel, c = 8: F = 0.6096513188965678
+Polynomial with degree less than p = 13 kernel, c = 9: F = 0.5997471836854343
+Polynomial with degree less than p = 13 kernel, c = 10: F = 0.5997471836854343
+Polynomial with degree less than p = 13 kernel, c = 11: F = 0.5997471836854343
+Polynomial with degree less than p = 13 kernel, c = 12: F = 0.582772114841237
+Polynomial with degree less than p = 13 kernel, c = 13: F = 0.5756946475934073
+Polynomial with degree less than p = 13 kernel, c = 14: F = 0.5756946475934073
+Polynomial with degree less than p = 14 kernel, c = 1: F = 0.6506718897271213
+Polynomial with degree less than p = 14 kernel, c = 2: F = 0.6196912538984809
+Polynomial with degree less than p = 14 kernel, c = 3: F = 0.6128799017627764
+Polynomial with degree less than p = 14 kernel, c = 4: F = 0.6096513188965678
+Polynomial with degree less than p = 14 kernel, c = 5: F = 0.5997471836854343
+Polynomial with degree less than p = 14 kernel, c = 6: F = 0.5899804764600001
+Polynomial with degree less than p = 14 kernel, c = 7: F = 0.5730084097528932
+Polynomial with degree less than p = 14 kernel, c = 8: F = 0.5587160897665904
+Polynomial with degree less than p = 14 kernel, c = 9: F = 0.5587160897665904
+Polynomial with degree less than p = 14 kernel, c = 10: F = 0.5488216804776442
+Polynomial with degree less than p = 14 kernel, c = 11: F = 0.5347806683739887
+Polynomial with degree less than p = 14 kernel, c = 12: F = 0.5279485777895342
+Polynomial with degree less than p = 14 kernel, c = 13: F = 0.5279485777895342
+Polynomial with degree less than p = 14 kernel, c = 14: F = 0.5279485777895342
+Polynomial kernel (with degree less than), optimal p = 3, c = 4: F = 0.7421017509605826
+0,000000000 0,000000000 0,000000000 0,000000000 3,963212115 4,000000000 0,000000000 4,000000000 3,584364827 4,000000000 4,000000000 4,000000000 4,000000000 4,000000000 4,000000000 0,000000000 0,000000000 4,000000000 0,000000000 4,000000000 4,000000000 4,000000000 4,000000000 4,000000000 4,000000000 4,000000000 4,000000000 4,000000000 0,000000000 4,000000000 4,000000000 4,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 4,000000000 0,000000000 4,000000000 4,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 4,000000000 4,000000000 0,000000000 0,000000000 4,000000000 0,000000000 0,000000000 0,959246536 0,000000000 0,000000000 4,000000000 0,000000000 4,000000000 0,000000000 0,000000000 2,496980894 4,000000000 4,000000000 4,000000000 0,000000000 0,000000000 4,000000000 4,000000000 0,000000000 4,000000000 0,000000000 0,000000000 1,136053268 1,218182110 4,000000000 4,000000000 0,000000000 4,000000000 4,000000000 4,000000000 0,000000000 0,000000000 0,000000000 1,786414388 0,000000000 0,000000000 0,000000000 0,000000000 4,000000000 0,000000000 4,000000000 0,000000000 4,000000000 4,000000000 3,950699746 0,000000000 0,000000000 0,000000000 0,000000000 4,000000000 4,000000000 0,000000000 0,000000000 4,000000000 2,863901455 
+
+Radial kernel, b = 0.03, c = 1: F = 0.6590909090909091
+Radial kernel, b = 0.03, c = 2: F = 0.6590909090909091
+Radial kernel, b = 0.03, c = 3: F = 0.6590909090909091
+Radial kernel, b = 0.03, c = 4: F = 0.6590909090909091
+Radial kernel, b = 0.03, c = 5: F = 0.6590909090909091
+Radial kernel, b = 0.03, c = 6: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 7: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 8: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 9: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 10: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 11: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 12: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 13: F = 0.64590799031477
+Radial kernel, b = 0.03, c = 14: F = 0.64590799031477
+Radial kernel, b = 0.06, c = 1: F = 0.6590909090909091
+Radial kernel, b = 0.06, c = 2: F = 0.6590909090909091
+Radial kernel, b = 0.06, c = 3: F = 0.6590909090909091
+Radial kernel, b = 0.06, c = 4: F = 0.64590799031477
+Radial kernel, b = 0.06, c = 5: F = 0.64590799031477
+Radial kernel, b = 0.06, c = 6: F = 0.6572104018912529
+Radial kernel, b = 0.06, c = 7: F = 0.6572104018912529
+Radial kernel, b = 0.06, c = 8: F = 0.6572104018912529
+Radial kernel, b = 0.06, c = 9: F = 0.6572104018912529
+Radial kernel, b = 0.06, c = 10: F = 0.6572104018912529
+Radial kernel, b = 0.06, c = 11: F = 0.6703932126377399
+Radial kernel, b = 0.06, c = 12: F = 0.6703932126377399
+Radial kernel, b = 0.06, c = 13: F = 0.6703932126377399
+Radial kernel, b = 0.06, c = 14: F = 0.6812225954511654
+Radial kernel, b = 0.09, c = 1: F = 0.6590909090909091
+Radial kernel, b = 0.09, c = 2: F = 0.6590909090909091
+Radial kernel, b = 0.09, c = 3: F = 0.651621187590107
+Radial kernel, b = 0.09, c = 4: F = 0.6572104018912529
+Radial kernel, b = 0.09, c = 5: F = 0.6572104018912529
+Radial kernel, b = 0.09, c = 6: F = 0.6703932126377399
+Radial kernel, b = 0.09, c = 7: F = 0.6758636947516801
+Radial kernel, b = 0.09, c = 8: F = 0.6864767059237968
+Radial kernel, b = 0.09, c = 9: F = 0.6864767059237968
+Radial kernel, b = 0.09, c = 10: F = 0.6864767059237968
+Radial kernel, b = 0.09, c = 11: F = 0.6733025023241795
+Radial kernel, b = 0.09, c = 12: F = 0.6835378335771604
+Radial kernel, b = 0.09, c = 13: F = 0.6653451869967506
+Radial kernel, b = 0.09, c = 14: F = 0.6653451869967506
+Radial kernel, b = 0.12, c = 1: F = 0.6590909090909091
+Radial kernel, b = 0.12, c = 2: F = 0.651621187590107
+Radial kernel, b = 0.12, c = 3: F = 0.6572104018912529
+Radial kernel, b = 0.12, c = 4: F = 0.6812225954511654
+Radial kernel, b = 0.12, c = 5: F = 0.6864767059237968
+Radial kernel, b = 0.12, c = 6: F = 0.6733025023241795
+Radial kernel, b = 0.12, c = 7: F = 0.6784646857702616
+Radial kernel, b = 0.12, c = 8: F = 0.6784646857702616
+Radial kernel, b = 0.12, c = 9: F = 0.6754299314039448
+Radial kernel, b = 0.12, c = 10: F = 0.6704273719086556
+Radial kernel, b = 0.12, c = 11: F = 0.6865663550877921
+Radial kernel, b = 0.12, c = 12: F = 0.6865663550877921
+Radial kernel, b = 0.12, c = 13: F = 0.691278262538108
+Radial kernel, b = 0.12, c = 14: F = 0.700637841502445
+Radial kernel, b = 0.15, c = 1: F = 0.6590909090909091
+Radial kernel, b = 0.15, c = 2: F = 0.6572104018912529
+Radial kernel, b = 0.15, c = 3: F = 0.6864767059237968
+Radial kernel, b = 0.15, c = 4: F = 0.6733025023241795
+Radial kernel, b = 0.15, c = 5: F = 0.6784646857702616
+Radial kernel, b = 0.15, c = 6: F = 0.6754299314039448
+Radial kernel, b = 0.15, c = 7: F = 0.6623828751344764
+Radial kernel, b = 0.15, c = 8: F = 0.6865663550877921
+Radial kernel, b = 0.15, c = 9: F = 0.6959662708240212
+Radial kernel, b = 0.15, c = 10: F = 0.7053003501287003
+Radial kernel, b = 0.15, c = 11: F = 0.7193057044310031
+Radial kernel, b = 0.15, c = 12: F = 0.7382800196352217
+Radial kernel, b = 0.15, c = 13: F = 0.7382800196352217
+Radial kernel, b = 0.15, c = 14: F = 0.7259486092829784
+Radial kernel, b = 0.18, c = 1: F = 0.664804469273743
+Radial kernel, b = 0.18, c = 2: F = 0.6864767059237968
+Radial kernel, b = 0.18, c = 3: F = 0.6733025023241795
+Radial kernel, b = 0.18, c = 4: F = 0.6653451869967506
+Radial kernel, b = 0.18, c = 5: F = 0.6623828751344764
+Radial kernel, b = 0.18, c = 6: F = 0.6865663550877921
+Radial kernel, b = 0.18, c = 7: F = 0.7053003501287003
+Radial kernel, b = 0.18, c = 8: F = 0.7240035645557069
+Radial kernel, b = 0.18, c = 9: F = 0.7382800196352217
+Radial kernel, b = 0.18, c = 10: F = 0.7259486092829784
+Radial kernel, b = 0.18, c = 11: F = 0.7308631487461525
+Radial kernel, b = 0.18, c = 12: F = 0.745962590176377
+Radial kernel, b = 0.18, c = 13: F = 0.7066240484501829
+Radial kernel, b = 0.18, c = 14: F = 0.7066240484501829
+Radial kernel, b = 0.21, c = 1: F = 0.6703932126377399
+Radial kernel, b = 0.21, c = 2: F = 0.6864767059237968
+Radial kernel, b = 0.21, c = 3: F = 0.6653451869967506
+Radial kernel, b = 0.21, c = 4: F = 0.6770406469467043
+Radial kernel, b = 0.21, c = 5: F = 0.6959662708240212
+Radial kernel, b = 0.21, c = 6: F = 0.7099610734554268
+Radial kernel, b = 0.21, c = 7: F = 0.7334841916247963
+Radial kernel, b = 0.21, c = 8: F = 0.7259486092829784
+Radial kernel, b = 0.21, c = 9: F = 0.7358331078123799
+Radial kernel, b = 0.21, c = 10: F = 0.7066240484501829
+Radial kernel, b = 0.21, c = 11: F = 0.7066240484501829
+Radial kernel, b = 0.21, c = 12: F = 0.6946471574059093
+Radial kernel, b = 0.21, c = 13: F = 0.6989215716743751
+Radial kernel, b = 0.21, c = 14: F = 0.6874268150496338
+Radial kernel, b = 0.24, c = 1: F = 0.6758636947516801
+Radial kernel, b = 0.24, c = 2: F = 0.6835378335771604
+Radial kernel, b = 0.24, c = 3: F = 0.6803603412148087
+Radial kernel, b = 0.24, c = 4: F = 0.700637841502445
+Radial kernel, b = 0.24, c = 5: F = 0.7287275230147122
+Radial kernel, b = 0.24, c = 6: F = 0.7210834156848314
+Radial kernel, b = 0.24, c = 7: F = 0.7358331078123799
+Radial kernel, b = 0.24, c = 8: F = 0.7066240484501829
+Radial kernel, b = 0.24, c = 9: F = 0.7066240484501829
+Radial kernel, b = 0.24, c = 10: F = 0.7051556513083437
+Radial kernel, b = 0.24, c = 11: F = 0.6874268150496338
+Radial kernel, b = 0.24, c = 12: F = 0.6930809447721585
+Radial kernel, b = 0.24, c = 13: F = 0.6988306782490592
+Radial kernel, b = 0.24, c = 14: F = 0.6988306782490592
+Radial kernel, b = 0.27, c = 1: F = 0.6864767059237968
+Radial kernel, b = 0.27, c = 2: F = 0.6704273719086556
+Radial kernel, b = 0.27, c = 3: F = 0.691278262538108
+Radial kernel, b = 0.27, c = 4: F = 0.7193057044310031
+Radial kernel, b = 0.27, c = 5: F = 0.7210834156848314
+Radial kernel, b = 0.27, c = 6: F = 0.7408643634314449
+Radial kernel, b = 0.27, c = 7: F = 0.7066240484501829
+Radial kernel, b = 0.27, c = 8: F = 0.688074119733825
+Radial kernel, b = 0.27, c = 9: F = 0.6874268150496338
+Radial kernel, b = 0.27, c = 10: F = 0.6930809447721585
+Radial kernel, b = 0.27, c = 11: F = 0.6988306782490592
+Radial kernel, b = 0.27, c = 12: F = 0.6988306782490592
+Radial kernel, b = 0.27, c = 13: F = 0.7046805205802783
+Radial kernel, b = 0.27, c = 14: F = 0.7046805205802783
+Radial kernel, b = 0.30000000000000004, c = 1: F = 0.6864767059237968
+Radial kernel, b = 0.30000000000000004, c = 2: F = 0.6754299314039448
+Radial kernel, b = 0.30000000000000004, c = 3: F = 0.7099610734554268
+Radial kernel, b = 0.30000000000000004, c = 4: F = 0.7382800196352217
+Radial kernel, b = 0.30000000000000004, c = 5: F = 0.7358331078123799
+Radial kernel, b = 0.30000000000000004, c = 6: F = 0.7066240484501829
+Radial kernel, b = 0.30000000000000004, c = 7: F = 0.6989215716743751
+Radial kernel, b = 0.30000000000000004, c = 8: F = 0.6874268150496338
+Radial kernel, b = 0.30000000000000004, c = 9: F = 0.6988306782490592
+Radial kernel, b = 0.30000000000000004, c = 10: F = 0.6988306782490592
+Radial kernel, b = 0.30000000000000004, c = 11: F = 0.7046805205802783
+Radial kernel, b = 0.30000000000000004, c = 12: F = 0.7046805205802783
+Radial kernel, b = 0.30000000000000004, c = 13: F = 0.710634717564206
+Radial kernel, b = 0.30000000000000004, c = 14: F = 0.710634717564206
+Radial kernel, b = 0.33000000000000007, c = 1: F = 0.6864767059237968
+Radial kernel, b = 0.33000000000000007, c = 2: F = 0.6818230142477452
+Radial kernel, b = 0.33000000000000007, c = 3: F = 0.7240035645557069
+Radial kernel, b = 0.33000000000000007, c = 4: F = 0.7308631487461525
+Radial kernel, b = 0.33000000000000007, c = 5: F = 0.7066240484501829
+Radial kernel, b = 0.33000000000000007, c = 6: F = 0.6989215716743751
+Radial kernel, b = 0.33000000000000007, c = 7: F = 0.6874268150496338
+Radial kernel, b = 0.33000000000000007, c = 8: F = 0.6988306782490592
+Radial kernel, b = 0.33000000000000007, c = 9: F = 0.6988306782490592
+Radial kernel, b = 0.33000000000000007, c = 10: F = 0.7046805205802783
+Radial kernel, b = 0.33000000000000007, c = 11: F = 0.710634717564206
+Radial kernel, b = 0.33000000000000007, c = 12: F = 0.710634717564206
+Radial kernel, b = 0.33000000000000007, c = 13: F = 0.710634717564206
+Radial kernel, b = 0.33000000000000007, c = 14: F = 0.722871873426001
+Radial kernel, b = 0.3600000000000001, c = 1: F = 0.6784646857702616
+Radial kernel, b = 0.3600000000000001, c = 2: F = 0.6959662708240212
+Radial kernel, b = 0.3600000000000001, c = 3: F = 0.7210834156848314
+Radial kernel, b = 0.3600000000000001, c = 4: F = 0.7186967293418846
+Radial kernel, b = 0.3600000000000001, c = 5: F = 0.7051556513083437
+Radial kernel, b = 0.3600000000000001, c = 6: F = 0.6874268150496338
+Radial kernel, b = 0.3600000000000001, c = 7: F = 0.6988306782490592
+Radial kernel, b = 0.3600000000000001, c = 8: F = 0.7046805205802783
+Radial kernel, b = 0.3600000000000001, c = 9: F = 0.7046805205802783
+Radial kernel, b = 0.3600000000000001, c = 10: F = 0.710634717564206
+Radial kernel, b = 0.3600000000000001, c = 11: F = 0.7166972574607994
+Radial kernel, b = 0.3600000000000001, c = 12: F = 0.722871873426001
+Radial kernel, b = 0.3600000000000001, c = 13: F = 0.722871873426001
+Radial kernel, b = 0.3600000000000001, c = 14: F = 0.7291620465705688
+Radial kernel, b = 0.3900000000000001, c = 1: F = 0.6835378335771604
+Radial kernel, b = 0.3900000000000001, c = 2: F = 0.7193057044310031
+Radial kernel, b = 0.3900000000000001, c = 3: F = 0.7162613037785137
+Radial kernel, b = 0.3900000000000001, c = 4: F = 0.7066240484501829
+Radial kernel, b = 0.3900000000000001, c = 5: F = 0.6874268150496338
+Radial kernel, b = 0.3900000000000001, c = 6: F = 0.6988306782490592
+Radial kernel, b = 0.3900000000000001, c = 7: F = 0.6988306782490592
+Radial kernel, b = 0.3900000000000001, c = 8: F = 0.7046805205802783
+Radial kernel, b = 0.3900000000000001, c = 9: F = 0.7166972574607994
+Radial kernel, b = 0.3900000000000001, c = 10: F = 0.722871873426001
+Radial kernel, b = 0.3900000000000001, c = 11: F = 0.722871873426001
+Radial kernel, b = 0.3900000000000001, c = 12: F = 0.7291620465705688
+Radial kernel, b = 0.3900000000000001, c = 13: F = 0.74875701952748
+Radial kernel, b = 0.3900000000000001, c = 14: F = 0.7385587521003727
+Radial kernel, b = 0.42000000000000015, c = 1: F = 0.6704273719086556
+Radial kernel, b = 0.42000000000000015, c = 2: F = 0.7287275230147122
+Radial kernel, b = 0.42000000000000015, c = 3: F = 0.7408643634314449
+Radial kernel, b = 0.42000000000000015, c = 4: F = 0.7051556513083437
+Radial kernel, b = 0.42000000000000015, c = 5: F = 0.6930809447721585
+Radial kernel, b = 0.42000000000000015, c = 6: F = 0.6988306782490592
+Radial kernel, b = 0.42000000000000015, c = 7: F = 0.7046805205802783
+Radial kernel, b = 0.42000000000000015, c = 8: F = 0.722871873426001
+Radial kernel, b = 0.42000000000000015, c = 9: F = 0.722871873426001
+Radial kernel, b = 0.42000000000000015, c = 10: F = 0.722871873426001
+Radial kernel, b = 0.42000000000000015, c = 11: F = 0.7291620465705688
+Radial kernel, b = 0.42000000000000015, c = 12: F = 0.7385587521003727
+Radial kernel, b = 0.42000000000000015, c = 13: F = 0.7385587521003727
+Radial kernel, b = 0.42000000000000015, c = 14: F = 0.7317730112443045
+Radial kernel, b = 0.4500000000000002, c = 1: F = 0.6754299314039448
+Radial kernel, b = 0.4500000000000002, c = 2: F = 0.7287275230147122
+Radial kernel, b = 0.4500000000000002, c = 3: F = 0.7066240484501829
+Radial kernel, b = 0.4500000000000002, c = 4: F = 0.6874268150496338
+Radial kernel, b = 0.4500000000000002, c = 5: F = 0.6988306782490592
+Radial kernel, b = 0.4500000000000002, c = 6: F = 0.710634717564206
+Radial kernel, b = 0.4500000000000002, c = 7: F = 0.722871873426001
+Radial kernel, b = 0.4500000000000002, c = 8: F = 0.722871873426001
+Radial kernel, b = 0.4500000000000002, c = 9: F = 0.722871873426001
+Radial kernel, b = 0.4500000000000002, c = 10: F = 0.7421017509605826
+Radial kernel, b = 0.4500000000000002, c = 11: F = 0.7385587521003727
+Radial kernel, b = 0.4500000000000002, c = 12: F = 0.7385587521003727
+Radial kernel, b = 0.4500000000000002, c = 13: F = 0.7317730112443045
+Radial kernel, b = 0.4500000000000002, c = 14: F = 0.7251139981072012
+Radial kernel, b = 0.4800000000000002, c = 1: F = 0.6754299314039448
+Radial kernel, b = 0.4800000000000002, c = 2: F = 0.7162613037785137
+Radial kernel, b = 0.4800000000000002, c = 3: F = 0.6946471574059093
+Radial kernel, b = 0.4800000000000002, c = 4: F = 0.6874268150496338
+Radial kernel, b = 0.4800000000000002, c = 5: F = 0.7046805205802783
+Radial kernel, b = 0.4800000000000002, c = 6: F = 0.7166972574607994
+Radial kernel, b = 0.4800000000000002, c = 7: F = 0.722871873426001
+Radial kernel, b = 0.4800000000000002, c = 8: F = 0.7291620465705688
+Radial kernel, b = 0.4800000000000002, c = 9: F = 0.7421017509605826
+Radial kernel, b = 0.4800000000000002, c = 10: F = 0.7317730112443045
+Radial kernel, b = 0.4800000000000002, c = 11: F = 0.7385587521003727
+Radial kernel, b = 0.4800000000000002, c = 12: F = 0.7317730112443045
+Radial kernel, b = 0.4800000000000002, c = 13: F = 0.7251139981072012
+Radial kernel, b = 0.4800000000000002, c = 14: F = 0.7251139981072012
+Radial kernel, b = 0.5100000000000002, c = 1: F = 0.6770406469467043
+Radial kernel, b = 0.5100000000000002, c = 2: F = 0.7162613037785137
+Radial kernel, b = 0.5100000000000002, c = 3: F = 0.7051556513083437
+Radial kernel, b = 0.5100000000000002, c = 4: F = 0.7046805205802783
+Radial kernel, b = 0.5100000000000002, c = 5: F = 0.7166972574607994
+Radial kernel, b = 0.5100000000000002, c = 6: F = 0.722871873426001
+Radial kernel, b = 0.5100000000000002, c = 7: F = 0.722871873426001
+Radial kernel, b = 0.5100000000000002, c = 8: F = 0.7291620465705688
+Radial kernel, b = 0.5100000000000002, c = 9: F = 0.7317730112443045
+Radial kernel, b = 0.5100000000000002, c = 10: F = 0.7385587521003727
+Radial kernel, b = 0.5100000000000002, c = 11: F = 0.7317730112443045
+Radial kernel, b = 0.5100000000000002, c = 12: F = 0.7251139981072012
+Radial kernel, b = 0.5100000000000002, c = 13: F = 0.7185791337941867
+Radial kernel, b = 0.5100000000000002, c = 14: F = 0.7385587521003727
+Radial kernel, b = 0.5400000000000003, c = 1: F = 0.6959662708240212
+Radial kernel, b = 0.5400000000000003, c = 2: F = 0.7259486092829784
+Radial kernel, b = 0.5400000000000003, c = 3: F = 0.6989215716743751
+Radial kernel, b = 0.5400000000000003, c = 4: F = 0.7046805205802783
+Radial kernel, b = 0.5400000000000003, c = 5: F = 0.7166972574607994
+Radial kernel, b = 0.5400000000000003, c = 6: F = 0.722871873426001
+Radial kernel, b = 0.5400000000000003, c = 7: F = 0.7291620465705688
+Radial kernel, b = 0.5400000000000003, c = 8: F = 0.7317730112443045
+Radial kernel, b = 0.5400000000000003, c = 9: F = 0.7317730112443045
+Radial kernel, b = 0.5400000000000003, c = 10: F = 0.7251139981072012
+Radial kernel, b = 0.5400000000000003, c = 11: F = 0.7185791337941867
+Radial kernel, b = 0.5400000000000003, c = 12: F = 0.7185791337941867
+Radial kernel, b = 0.5400000000000003, c = 13: F = 0.7185791337941867
+Radial kernel, b = 0.5400000000000003, c = 14: F = 0.7251139981072012
+Radial kernel, b = 0.5700000000000003, c = 1: F = 0.7053003501287003
+Radial kernel, b = 0.5700000000000003, c = 2: F = 0.7186967293418846
+Radial kernel, b = 0.5700000000000003, c = 3: F = 0.6930809447721585
+Radial kernel, b = 0.5700000000000003, c = 4: F = 0.710634717564206
+Radial kernel, b = 0.5700000000000003, c = 5: F = 0.722871873426001
+Radial kernel, b = 0.5700000000000003, c = 6: F = 0.722871873426001
+Radial kernel, b = 0.5700000000000003, c = 7: F = 0.7355710095960505
+Radial kernel, b = 0.5700000000000003, c = 8: F = 0.7317730112443045
+Radial kernel, b = 0.5700000000000003, c = 9: F = 0.7251139981072012
+Radial kernel, b = 0.5700000000000003, c = 10: F = 0.7185791337941867
+Radial kernel, b = 0.5700000000000003, c = 11: F = 0.7185791337941867
+Radial kernel, b = 0.5700000000000003, c = 12: F = 0.7185791337941867
+Radial kernel, b = 0.5700000000000003, c = 13: F = 0.7185791337941867
+Radial kernel, b = 0.5700000000000003, c = 14: F = 0.6996899821230567
+Radial kernel, b = 0.6000000000000003, c = 1: F = 0.7099610734554268
+Radial kernel, b = 0.6000000000000003, c = 2: F = 0.7137062199630537
+Radial kernel, b = 0.6000000000000003, c = 3: F = 0.6988306782490592
+Radial kernel, b = 0.6000000000000003, c = 4: F = 0.710634717564206
+Radial kernel, b = 0.6000000000000003, c = 5: F = 0.722871873426001
+Radial kernel, b = 0.6000000000000003, c = 6: F = 0.7291620465705688
+Radial kernel, b = 0.6000000000000003, c = 7: F = 0.7317730112443045
+Radial kernel, b = 0.6000000000000003, c = 8: F = 0.7317730112443045
+Radial kernel, b = 0.6000000000000003, c = 9: F = 0.7251139981072012
+Radial kernel, b = 0.6000000000000003, c = 10: F = 0.7185791337941867
+Radial kernel, b = 0.6000000000000003, c = 11: F = 0.7185791337941867
+Radial kernel, b = 0.6000000000000003, c = 12: F = 0.7185791337941867
+Radial kernel, b = 0.6000000000000003, c = 13: F = 0.6996899821230567
+Radial kernel, b = 0.6000000000000003, c = 14: F = 0.7121655973628679
+Radial kernel, b = 0.6300000000000003, c = 1: F = 0.7193057044310031
+Radial kernel, b = 0.6300000000000003, c = 2: F = 0.6946471574059093
+Radial kernel, b = 0.6300000000000003, c = 3: F = 0.7046805205802783
+Radial kernel, b = 0.6300000000000003, c = 4: F = 0.7166972574607994
+Radial kernel, b = 0.6300000000000003, c = 5: F = 0.722871873426001
+Radial kernel, b = 0.6300000000000003, c = 6: F = 0.7355710095960505
+Radial kernel, b = 0.6300000000000003, c = 7: F = 0.7385587521003727
+Radial kernel, b = 0.6300000000000003, c = 8: F = 0.7251139981072012
+Radial kernel, b = 0.6300000000000003, c = 9: F = 0.7185791337941867
+Radial kernel, b = 0.6300000000000003, c = 10: F = 0.7185791337941867
+Radial kernel, b = 0.6300000000000003, c = 11: F = 0.7185791337941867
+Radial kernel, b = 0.6300000000000003, c = 12: F = 0.6996899821230567
+Radial kernel, b = 0.6300000000000003, c = 13: F = 0.7121655973628679
+Radial kernel, b = 0.6300000000000003, c = 14: F = 0.7121655973628679
+Radial kernel, b = 0.6600000000000004, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.6600000000000004, c = 2: F = 0.6946471574059093
+Radial kernel, b = 0.6600000000000004, c = 3: F = 0.7046805205802783
+Radial kernel, b = 0.6600000000000004, c = 4: F = 0.7166972574607994
+Radial kernel, b = 0.6600000000000004, c = 5: F = 0.7291620465705688
+Radial kernel, b = 0.6600000000000004, c = 6: F = 0.7317730112443045
+Radial kernel, b = 0.6600000000000004, c = 7: F = 0.7385587521003727
+Radial kernel, b = 0.6600000000000004, c = 8: F = 0.7251139981072012
+Radial kernel, b = 0.6600000000000004, c = 9: F = 0.7185791337941867
+Radial kernel, b = 0.6600000000000004, c = 10: F = 0.7185791337941867
+Radial kernel, b = 0.6600000000000004, c = 11: F = 0.7185791337941867
+Radial kernel, b = 0.6600000000000004, c = 12: F = 0.7121655973628679
+Radial kernel, b = 0.6600000000000004, c = 13: F = 0.7121655973628679
+Radial kernel, b = 0.6600000000000004, c = 14: F = 0.7215780685638755
+Radial kernel, b = 0.6900000000000004, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.6900000000000004, c = 2: F = 0.6946471574059093
+Radial kernel, b = 0.6900000000000004, c = 3: F = 0.7046805205802783
+Radial kernel, b = 0.6900000000000004, c = 4: F = 0.722871873426001
+Radial kernel, b = 0.6900000000000004, c = 5: F = 0.7355710095960505
+Radial kernel, b = 0.6900000000000004, c = 6: F = 0.7385587521003727
+Radial kernel, b = 0.6900000000000004, c = 7: F = 0.7251139981072012
+Radial kernel, b = 0.6900000000000004, c = 8: F = 0.7185791337941867
+Radial kernel, b = 0.6900000000000004, c = 9: F = 0.7121655973628679
+Radial kernel, b = 0.6900000000000004, c = 10: F = 0.7058703204120226
+Radial kernel, b = 0.6900000000000004, c = 11: F = 0.7058703204120226
+Radial kernel, b = 0.6900000000000004, c = 12: F = 0.7121655973628679
+Radial kernel, b = 0.6900000000000004, c = 13: F = 0.7215780685638755
+Radial kernel, b = 0.6900000000000004, c = 14: F = 0.7215780685638755
+Radial kernel, b = 0.7200000000000004, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.7200000000000004, c = 2: F = 0.6934568036276291
+Radial kernel, b = 0.7200000000000004, c = 3: F = 0.710634717564206
+Radial kernel, b = 0.7200000000000004, c = 4: F = 0.722871873426001
+Radial kernel, b = 0.7200000000000004, c = 5: F = 0.7317730112443045
+Radial kernel, b = 0.7200000000000004, c = 6: F = 0.7385587521003727
+Radial kernel, b = 0.7200000000000004, c = 7: F = 0.7251139981072012
+Radial kernel, b = 0.7200000000000004, c = 8: F = 0.7355710095960505
+Radial kernel, b = 0.7200000000000004, c = 9: F = 0.7185791337941867
+Radial kernel, b = 0.7200000000000004, c = 10: F = 0.7121655973628679
+Radial kernel, b = 0.7200000000000004, c = 11: F = 0.7185791337941867
+Radial kernel, b = 0.7200000000000004, c = 12: F = 0.7215780685638755
+Radial kernel, b = 0.7200000000000004, c = 13: F = 0.7215780685638755
+Radial kernel, b = 0.7200000000000004, c = 14: F = 0.7185705506320752
+Radial kernel, b = 0.7500000000000004, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.7500000000000004, c = 2: F = 0.704473557955944
+Radial kernel, b = 0.7500000000000004, c = 3: F = 0.710634717564206
+Radial kernel, b = 0.7500000000000004, c = 4: F = 0.7291620465705688
+Radial kernel, b = 0.7500000000000004, c = 5: F = 0.7317730112443045
+Radial kernel, b = 0.7500000000000004, c = 6: F = 0.7385587521003727
+Radial kernel, b = 0.7500000000000004, c = 7: F = 0.7317730112443045
+Radial kernel, b = 0.7500000000000004, c = 8: F = 0.7121655973628679
+Radial kernel, b = 0.7500000000000004, c = 9: F = 0.7058703204120226
+Radial kernel, b = 0.7500000000000004, c = 10: F = 0.7185791337941867
+Radial kernel, b = 0.7500000000000004, c = 11: F = 0.7385587521003727
+Radial kernel, b = 0.7500000000000004, c = 12: F = 0.7284960898685549
+Radial kernel, b = 0.7500000000000004, c = 13: F = 0.7185705506320752
+Radial kernel, b = 0.7500000000000004, c = 14: F = 0.7185705506320752
+Radial kernel, b = 0.7800000000000005, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.7800000000000005, c = 2: F = 0.7101176454213626
+Radial kernel, b = 0.7800000000000005, c = 3: F = 0.710634717564206
+Radial kernel, b = 0.7800000000000005, c = 4: F = 0.7355710095960505
+Radial kernel, b = 0.7800000000000005, c = 5: F = 0.7385587521003727
+Radial kernel, b = 0.7800000000000005, c = 6: F = 0.7251139981072012
+Radial kernel, b = 0.7800000000000005, c = 7: F = 0.7317730112443045
+Radial kernel, b = 0.7800000000000005, c = 8: F = 0.7058703204120226
+Radial kernel, b = 0.7800000000000005, c = 9: F = 0.7058703204120226
+Radial kernel, b = 0.7800000000000005, c = 10: F = 0.7317730112443045
+Radial kernel, b = 0.7800000000000005, c = 11: F = 0.7185705506320752
+Radial kernel, b = 0.7800000000000005, c = 12: F = 0.7185705506320752
+Radial kernel, b = 0.7800000000000005, c = 13: F = 0.7185705506320752
+Radial kernel, b = 0.7800000000000005, c = 14: F = 0.7087835684897814
+Radial kernel, b = 0.8100000000000005, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.8100000000000005, c = 2: F = 0.6988306782490592
+Radial kernel, b = 0.8100000000000005, c = 3: F = 0.710634717564206
+Radial kernel, b = 0.8100000000000005, c = 4: F = 0.7355710095960505
+Radial kernel, b = 0.8100000000000005, c = 5: F = 0.7385587521003727
+Radial kernel, b = 0.8100000000000005, c = 6: F = 0.7251139981072012
+Radial kernel, b = 0.8100000000000005, c = 7: F = 0.7317730112443045
+Radial kernel, b = 0.8100000000000005, c = 8: F = 0.7058703204120226
+Radial kernel, b = 0.8100000000000005, c = 9: F = 0.714788848259138
+Radial kernel, b = 0.8100000000000005, c = 10: F = 0.7185705506320752
+Radial kernel, b = 0.8100000000000005, c = 11: F = 0.7185705506320752
+Radial kernel, b = 0.8100000000000005, c = 12: F = 0.7185705506320752
+Radial kernel, b = 0.8100000000000005, c = 13: F = 0.7185705506320752
+Radial kernel, b = 0.8100000000000005, c = 14: F = 0.7087835684897814
+Radial kernel, b = 0.8400000000000005, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.8400000000000005, c = 2: F = 0.7046805205802783
+Radial kernel, b = 0.8400000000000005, c = 3: F = 0.710634717564206
+Radial kernel, b = 0.8400000000000005, c = 4: F = 0.7421017509605826
+Radial kernel, b = 0.8400000000000005, c = 5: F = 0.7385587521003727
+Radial kernel, b = 0.8400000000000005, c = 6: F = 0.7251139981072012
+Radial kernel, b = 0.8400000000000005, c = 7: F = 0.7121655973628679
+Radial kernel, b = 0.8400000000000005, c = 8: F = 0.7058703204120226
+Radial kernel, b = 0.8400000000000005, c = 9: F = 0.7284960898685549
+Radial kernel, b = 0.8400000000000005, c = 10: F = 0.7185705506320752
+Radial kernel, b = 0.8400000000000005, c = 11: F = 0.7087835684897814
+Radial kernel, b = 0.8400000000000005, c = 12: F = 0.7185705506320752
+Radial kernel, b = 0.8400000000000005, c = 13: F = 0.7087835684897814
+Radial kernel, b = 0.8400000000000005, c = 14: F = 0.7087835684897814
+Radial kernel, b = 0.8700000000000006, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.8700000000000006, c = 2: F = 0.7046805205802783
+Radial kernel, b = 0.8700000000000006, c = 3: F = 0.710634717564206
+Radial kernel, b = 0.8700000000000006, c = 4: F = 0.7317730112443045
+Radial kernel, b = 0.8700000000000006, c = 5: F = 0.7317730112443045
+Radial kernel, b = 0.8700000000000006, c = 6: F = 0.7251139981072012
+Radial kernel, b = 0.8700000000000006, c = 7: F = 0.7121655973628679
+Radial kernel, b = 0.8700000000000006, c = 8: F = 0.7081260258551926
+Radial kernel, b = 0.8700000000000006, c = 9: F = 0.7185705506320752
+Radial kernel, b = 0.8700000000000006, c = 10: F = 0.7087835684897814
+Radial kernel, b = 0.8700000000000006, c = 11: F = 0.7185705506320752
+Radial kernel, b = 0.8700000000000006, c = 12: F = 0.7185705506320752
+Radial kernel, b = 0.8700000000000006, c = 13: F = 0.7087835684897814
+Radial kernel, b = 0.8700000000000006, c = 14: F = 0.7087835684897814
+Radial kernel, b = 0.9000000000000006, c = 1: F = 0.7240035645557069
+Radial kernel, b = 0.9000000000000006, c = 2: F = 0.7046805205802783
+Radial kernel, b = 0.9000000000000006, c = 3: F = 0.7166972574607994
+Radial kernel, b = 0.9000000000000006, c = 4: F = 0.7317730112443045
+Radial kernel, b = 0.9000000000000006, c = 5: F = 0.7251139981072012
+Radial kernel, b = 0.9000000000000006, c = 6: F = 0.7251139981072012
+Radial kernel, b = 0.9000000000000006, c = 7: F = 0.7121655973628679
+Radial kernel, b = 0.9000000000000006, c = 8: F = 0.7115185412187588
+Radial kernel, b = 0.9000000000000006, c = 9: F = 0.7185705506320752
+Radial kernel, b = 0.9000000000000006, c = 10: F = 0.7161054988954623
+Radial kernel, b = 0.9000000000000006, c = 11: F = 0.7257552836974598
+Radial kernel, b = 0.9000000000000006, c = 12: F = 0.7257552836974598
+Radial kernel, b = 0.9000000000000006, c = 13: F = 0.7087835684897814
+Radial kernel, b = 0.9000000000000006, c = 14: F = 0.7087835684897814
+Radial kernel, b = 0.9300000000000006, c = 1: F = 0.7162613037785137
+Radial kernel, b = 0.9300000000000006, c = 2: F = 0.7046805205802783
+Radial kernel, b = 0.9300000000000006, c = 3: F = 0.722871873426001
+Radial kernel, b = 0.9300000000000006, c = 4: F = 0.7317730112443045
+Radial kernel, b = 0.9300000000000006, c = 5: F = 0.7251139981072012
+Radial kernel, b = 0.9300000000000006, c = 6: F = 0.7251139981072012
+Radial kernel, b = 0.9300000000000006, c = 7: F = 0.7081260258551926
+Radial kernel, b = 0.9300000000000006, c = 8: F = 0.7185705506320752
+Radial kernel, b = 0.9300000000000006, c = 9: F = 0.7161054988954623
+Radial kernel, b = 0.9300000000000006, c = 10: F = 0.7257552836974598
+Radial kernel, b = 0.9300000000000006, c = 11: F = 0.7257552836974598
+Radial kernel, b = 0.9300000000000006, c = 12: F = 0.7161054988954623
+Radial kernel, b = 0.9300000000000006, c = 13: F = 0.7161054988954623
+Radial kernel, b = 0.9300000000000006, c = 14: F = 0.7161054988954623
+Radial kernel, b = 0.9600000000000006, c = 1: F = 0.7087689912413391
+Radial kernel, b = 0.9600000000000006, c = 2: F = 0.710634717564206
+Radial kernel, b = 0.9600000000000006, c = 3: F = 0.722871873426001
+Radial kernel, b = 0.9600000000000006, c = 4: F = 0.7317730112443045
+Radial kernel, b = 0.9600000000000006, c = 5: F = 0.7251139981072012
+Radial kernel, b = 0.9600000000000006, c = 6: F = 0.7121655973628679
+Radial kernel, b = 0.9600000000000006, c = 7: F = 0.7115185412187588
+Radial kernel, b = 0.9600000000000006, c = 8: F = 0.7185705506320752
+Radial kernel, b = 0.9600000000000006, c = 9: F = 0.7161054988954623
+Radial kernel, b = 0.9600000000000006, c = 10: F = 0.7257552836974598
+Radial kernel, b = 0.9600000000000006, c = 11: F = 0.7257552836974598
+Radial kernel, b = 0.9600000000000006, c = 12: F = 0.7161054988954623
+Radial kernel, b = 0.9600000000000006, c = 13: F = 0.7161054988954623
+Radial kernel, b = 0.9600000000000006, c = 14: F = 0.7161054988954623
+Radial kernel, b = 0.9900000000000007, c = 1: F = 0.6965428679408303
+Radial kernel, b = 0.9900000000000007, c = 2: F = 0.710634717564206
+Radial kernel, b = 0.9900000000000007, c = 3: F = 0.7291620465705688
+Radial kernel, b = 0.9900000000000007, c = 4: F = 0.7251139981072012
+Radial kernel, b = 0.9900000000000007, c = 5: F = 0.7185791337941867
+Radial kernel, b = 0.9900000000000007, c = 6: F = 0.7081260258551926
+Radial kernel, b = 0.9900000000000007, c = 7: F = 0.7015959721571066
+Radial kernel, b = 0.9900000000000007, c = 8: F = 0.7161054988954623
+Radial kernel, b = 0.9900000000000007, c = 9: F = 0.7161054988954623
+Radial kernel, b = 0.9900000000000007, c = 10: F = 0.7257552836974598
+Radial kernel, b = 0.9900000000000007, c = 11: F = 0.7257552836974598
+Radial kernel, b = 0.9900000000000007, c = 12: F = 0.7161054988954623
+Radial kernel, b = 0.9900000000000007, c = 13: F = 0.7161054988954623
+Radial kernel, b = 0.9900000000000007, c = 14: F = 0.7161054988954623
+Radial kernel, optimal b = 0.3900000000000001, c = 13: F = 0.74875701952748
+0,000000000 0,000000000 13,000000000 0,000000000 13,000000000 13,000000000 0,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 2,699864578 0,000000000 13,000000000 9,609398284 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 13,000000000 0,000000000 13,000000000 13,000000000 13,000000000 0,000000000 0,000000000 0,000000000 0,000000000 1,586640703 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 13,000000000 0,000000000 12,332246055 0,000000000 13,000000000 0,000000000 13,000000000 13,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 1,075106689 13,000000000 13,000000000 0,000000000 0,000000000 13,000000000 0,000000000 0,000000000 13,000000000 0,000000000 0,000000000 13,000000000 13,000000000 13,000000000 0,000000000 1,596020761 0,000000000 13,000000000 13,000000000 13,000000000 7,986544888 0,000000000 13,000000000 13,000000000 0,000000000 13,000000000 0,000000000 0,000000000 11,878786735 3,691690547 13,000000000 13,000000000 0,000000000 13,000000000 13,000000000 13,000000000 13,000000000 0,000000000 0,000000000 13,000000000 0,000000000 0,000000000 0,000000000 0,000000000 13,000000000 0,000000000 13,000000000 0,000000000 13,000000000 13,000000000 13,000000000 0,000000000 0,000000000 0,000000000 0,000000000 13,000000000 13,000000000 0,000000000 0,000000000 13,000000000 -6,881590598 
+

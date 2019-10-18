@@ -1,3 +1,4 @@
+import javafx.util.Pair;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
@@ -18,11 +19,12 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Random;
 
 public class Linear {
 
-    public static int nextInt(BufferedReader sc) throws IOException {
-        int a = 0;
+    public static double nextInt(BufferedReader sc) throws IOException {
+        double a = 0;
         int k = 1;
         int b = sc.read();
         while (b < '0' || b > '9') {
@@ -36,118 +38,65 @@ public class Linear {
         return a * k;
     }
 
-    public static double nextDouble(BufferedReader sc) throws IOException {
-        String s = "";
-        int b = sc.read();
-        while (b < '0' || b > '9') {
-            b = sc.read();
-        }
-        while ((b >= '0' && b <= '9') || b == '.') {
-            s += (char)b;
-            b = sc.read();
-        }
-        return Double.parseDouble(s);
-    }
-
-    private static double scalarProduct(double[] fst, double[] snd) {
-        double res = 0;
-        for (int i = 0; i < fst.length; i++) res += fst[i] * snd[i];
-        return res;
-    }
-
-    private static double[][] multiply(double[][] fst, double[][] snd) {
-        double[][] res = new double[fst.length][snd[0].length];
-        double[][] sndTransposed = transpose(snd);
-        for (int i = 0; i < fst.length; i++) {
-            double[] aFst = fst[i];
-            for (int j = 0; j < snd[0].length; j++) {
-                res[i][j] = scalarProduct(aFst, sndTransposed[j]);
-            }
-        }
-        return res;
-    }
-
-    private static double[][] transpose(double[][] matrix) {
-        double[][] res = new double[matrix[0].length][matrix.length];
-        for (int i = 0; i < matrix[0].length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                res[i][j] = matrix[j][i];
-            }
-        }
-        return res;
-    }
-
-    public static double[] calcGradientDescent(String fileName, int num) throws IOException {
-        BufferedReader r = new BufferedReader(new FileReader(new File(fileName)));
-        int m = nextInt(r);
-        int n = nextInt(r);
-        double[][] matrix = new double[n][m + 1];
-        double[][] target = new double[n][1];
-        double maxY = -10000000;
-        double minY = 10000000;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                matrix[i][j] = nextDouble(r);
-            }
-            matrix[i][m] = 1;
-            target[i][0] = nextDouble(r);
-            if (maxY < target[i][0]) maxY = target[i][0];
-            if (minY > target[i][0]) minY = target[i][0];
-        }
-        int testN = nextInt(r);
-        double[][] testMatrix = new double[testN][m + 1];
-        double[][] testTarget = new double[testN][1];
-        double maxYTest = -10000000;
-        double minYTest = 10000000;
-        for (int i = 0; i < testN; i++) {
-            for (int j = 0; j < m; j++) {
-                testMatrix[i][j] = nextDouble(r);
-            }
-            testMatrix[i][m] = 1;
-            testTarget[i][0] = nextDouble(r);
-            if (maxYTest < testTarget[i][0]) maxYTest = testTarget[i][0];
-            if (minYTest > testTarget[i][0]) minYTest = testTarget[i][0];
-        }
-        double[][] left = multiply(transpose(matrix), matrix);
-        double[] right = transpose(multiply(transpose(matrix), target))[0];
-        double[][] res = new double[m + 1][1];
-        for (int i = 0; i < m + 1; i++) res[i][0] = 1;
+    public static Pair<double[], Double> calcGradientDescent(int num, double matrixQ,
+                                               int m, int n, double testN, double[][] matrix, double[] target,
+                                               double[][] testMatrix, double[] testTarget, double minY, double minYTest,
+                                               double maxY, double maxYTest) {
+        Random R = new Random();
+        double[] res = new double[m + 1];
+        for (int i = 0; i < m + 1; i++) res[i] = R.nextDouble() / n;
+        double[] grad = new double[m + 1];
+        double[] pred = new double[n];
+        double[] errors = new double[n];
+        double[] xGrad = new double[n];
+        double step = 10e-35;
         XYSeriesCollection ds = new XYSeriesCollection();
         XYSeriesCollection ds2 = new XYSeriesCollection();
         XYSeries series = new XYSeries("1");
         XYSeries series2 = new XYSeries("2");
-        for (int iter = 0; iter < 1000; iter++) {
-            double[][] grad = multiply(left, res);
-            double norm = 0;
-            for (int i = 0; i < m + 1; i++) {
-                grad[i][0] -= right[i];
-                norm += grad[i][0] * grad[i][0];
-            }
-            if (norm < 0.0000000000000000001) break;
-            double[][] grad2 = multiply(left, grad);
-            double a = 0;
-            double b = 0;
-            for (int i = 0; i < m + 1; i++) {
-                a += grad[i][0] * grad[i][0];
-                b += grad2[i][0] * grad[i][0];
+        XYSeries series3 = new XYSeries("3");
+        double qTest = 0;
+        for (int iter = 0; iter < 3000; iter++) {
+            for (int i = 0; i < n; i++) {
+                pred[i] = Utils.scalarProduct(res, matrix[i]);
+                errors[i] = target[i] - pred[i];
             }
             for (int i = 0; i < m + 1; i++) {
-                res[i][0] -= a * grad[i][0] / b;
+                grad[i] = 0;
+                for (int k = 0; k < n; k++) {
+                    grad[i] -= errors[k] * matrix[k][i];
+                }
+                grad[i] = grad[i] * 2 / n;
+            }
+            for (int i = 0; i < n; i++) xGrad[i] = Utils.scalarProduct(grad, matrix[i]);
+            double sumLeft = 0;
+            double sumRight = 0;
+            for (int i = 0; i < n; i++) {
+                sumLeft = sumLeft + errors[i] * xGrad[i];
+                sumRight -= xGrad[i] * xGrad[i];
+            }
+            if (Math.abs(sumLeft / sumRight) < step) break;
+            for (int i = 0; i < m + 1; i++) {
+                res[i] -= sumLeft * grad[i] / sumRight;
             }
             double q = 0;
-            double[] tR = transpose(res)[0];
             for (int i = 0; i < n; i++) {
-                q += (scalarProduct(matrix[i], tR) - target[i][0]) * (scalarProduct(matrix[i], tR) - target[i][0]);
+                q += (Utils.scalarProduct(matrix[i], res) - target[i]) * (Utils.scalarProduct(matrix[i], res) - target[i]);
             }
-            series.add(iter + 1, Math.sqrt(q) * (maxY - minY));
-            double qTest = 0;
+            q /= n;
+            series.add(iter + 1, Math.sqrt(q) / (maxY - minY));
+            qTest = 0;
             for (int i = 0; i < testN; i++) {
-                qTest += (scalarProduct(testMatrix[i], tR) - testTarget[i][0]) * (scalarProduct(testMatrix[i], tR) - testTarget[i][0]);
+                qTest += (Utils.scalarProduct(testMatrix[i], res) - testTarget[i]) * (Utils.scalarProduct(testMatrix[i], res) - testTarget[i]);
             }
-            series2.add(iter + 1, Math.sqrt(qTest) / (maxYTest - minYTest));
+            qTest /= testN;
+            qTest = Math.sqrt(qTest) / (maxYTest - minYTest);
+            series2.add(iter + 1, qTest);
+            series3.add(iter + 1, matrixQ);
         }
         ds.addSeries(series);
         ds2.addSeries(series2);
+        ds2.addSeries(series3);
         JFreeChart ch = ChartFactory.createXYLineChart("Q(w) to Iterations (training set " + num + ")",
                 "Iterations", "Q(w)", ds, PlotOrientation.VERTICAL, false, false, false);
         JFreeChart ch2 = ChartFactory.createXYLineChart("Q(w) to Iterations (test set " + num + ")",
@@ -157,6 +106,8 @@ public class Linear {
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         renderer.setSeriesPaint(0, Color.RED);
         renderer.setSeriesStroke(0, new BasicStroke(2.0f));
+        renderer.setSeriesPaint(1, Color.BLUE);
+        renderer.setSeriesStroke(1, new BasicStroke(2.0f));
         plot.setBackgroundPaint(Color.white);
         plot.setRangeGridlinePaint(Color.black);
         plot.setRangeGridlinesVisible(true);
@@ -181,7 +132,7 @@ public class Linear {
             out.close();
         } catch (IOException ex) {
         }
-        return transpose(res)[0];
+        return new Pair<>(res, qTest);
     }
 
     private static double[] solveGauss(double[][] matrix, double[] target) {
@@ -198,6 +149,11 @@ public class Linear {
             target[i] = target[index];
             target[index] = tmp2;
             double mult = matrix[i][i];
+            if (mult == 0) {
+                for (int j = 0; j < len; j++) matrix[i][j] = 0;
+                target[i] = 0;
+                continue;
+            }
             for (int j = i; j < len; j++) {
                 matrix[i][j] /= mult;
             }
@@ -209,9 +165,6 @@ public class Linear {
                 }
                 target[j] -= mult2 * target[i];
             }
-            //            for (double[] d: copied) System.out.println(arrayToString(d));
-            //            for (double[] d: res) System.out.println(arrayToString(d));
-            //            System.out.println();
         }
         for (int i = len - 1; i > 0; i--) {
             for (int j = i - 1; j >= 0; j--) {
@@ -222,43 +175,65 @@ public class Linear {
         return target;
     }
 
-    public static double[] calcPseudoReverse(String fileName) throws IOException {
-        BufferedReader r = new BufferedReader(new FileReader(new File(fileName)));
-        int m = nextInt(r);
-        int n = nextInt(r);
-        double[][] matrix = new double[n][m + 1];
-        double[][] target = new double[n][1];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                matrix[i][j] = nextDouble(r);
-            }
-            matrix[i][m] = 1;
-            target[i][0] = nextDouble(r);
-        }
-        int testN = nextInt(r);
-        double[][] testMatrix = new double[testN][m + 1];
-        double[][] testTarget = new double[testN][1];
+    public static Pair<double[], Double> calcPseudoReverse(double testN, double[][] matrix, double[] target,
+                                                           double[][] testMatrix, double[] testTarget, double minYTest,
+                                                           double maxYTest) {
+        double[][] targetT = new double[target.length][1];
+        for (int i = 0; i < target.length; i++) targetT[i][0] = target[i];
+        double[] right = Utils.transpose(Utils.multiply(Utils.transpose(matrix), targetT))[0];
+        double[] res = solveGauss(Utils.multiply(Utils.transpose(matrix), matrix), right);
+        double qTest = 0;
         for (int i = 0; i < testN; i++) {
-            for (int j = 0; j < m; j++) {
-                testMatrix[i][j] = nextDouble(r);
-            }
-            testMatrix[i][m] = 1;
-            testTarget[i][0] = nextDouble(r);
+            qTest += (Utils.scalarProduct(testMatrix[i], res) - testTarget[i]) * (Utils.scalarProduct(testMatrix[i], res) - testTarget[i]);
         }
-        double[] right = transpose(multiply(transpose(matrix), target))[0];
-        return solveGauss(multiply(transpose(matrix), matrix), right);
+        qTest /= testN;
+        return new Pair<>(res, Math.sqrt(qTest) / (maxYTest - minYTest));
     }
 
     public static void main(String[] args) throws IOException {
-        for (int i = 1; i < 8; i++) {
-            double[] res1 = calcGradientDescent("src/main/resources/" + i + ".txt", i);
-            double[] res2 = calcPseudoReverse("src/main/resources/" + i + ".txt");
-            System.out.println(i + "th set, gradient descent:");
-            for (double d: res1) System.out.print(String.format("%.6f ", d));
+        for (int test = 1; test < 8; test++) {
+            BufferedReader r = new BufferedReader(new FileReader(new File("src/main/resources/" + test + ".txt")));
+            int m = (int)nextInt(r);
+            int n = (int)nextInt(r);
+            double[][] matrix = new double[n][m + 1];
+            double[] target = new double[n];
+            double maxY = -100000000000D;
+            double minY = 100000000000D;
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    matrix[i][j] = nextInt(r);
+                }
+                matrix[i][m] = 1;
+                target[i] = nextInt(r);
+                if (maxY < target[i]) maxY = target[i];
+                if (minY > target[i]) minY = target[i];
+            }
+            int testN = (int)nextInt(r);
+            double[][] testMatrix = new double[testN][m + 1];
+            double[] testTarget = new double[testN];
+            double maxYTest = -100000000000D;
+            double minYTest = 100000000000D;
+            for (int i = 0; i < testN; i++) {
+                for (int j = 0; j < m; j++) {
+                    testMatrix[i][j] = nextInt(r);
+                }
+                testMatrix[i][m] = 1;
+                testTarget[i] = nextInt(r);
+                if (maxYTest < testTarget[i]) maxYTest = testTarget[i];
+                if (minYTest > testTarget[i]) minYTest = testTarget[i];
+            }
+            Pair<double[], Double> resMatrix = calcPseudoReverse(testN, matrix, target, testMatrix, testTarget,
+                    minYTest, maxYTest);
+            Pair<double[], Double> resDescent = calcGradientDescent(test, resMatrix.getValue(), m, n, testN, matrix, target, testMatrix,
+                    testTarget, minY, minYTest, maxY, maxYTest);
+            System.out.println(test + "th set, gradient descent:");
+            for (double d: resDescent.getKey()) System.out.print(String.format("%.6f ", d));
             System.out.println();
-            System.out.println(i + "th set, pseudo-reverse matrix:");
-            for (double d: res2) System.out.print(String.format("%.6f ", d));
+            System.out.println("Q = " + resDescent.getValue());
+            System.out.println(test + "th set, pseudo-reverse matrix:");
+            for (double d: resMatrix.getKey()) System.out.print(String.format("%.6f ", d));
             System.out.println();
+            System.out.println("Q = " + resMatrix.getValue());
         }
     }
 

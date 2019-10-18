@@ -1,0 +1,204 @@
+Linear kernel, c = 1: F = 0.5996570848039151
+Linear kernel, c = 2: F = 0.7095104384252758
+Linear kernel, c = 3: F = 0.6588395787168083
+Linear kernel, c = 4: F = 0.6800166826897495
+Linear kernel, c = 5: F = 0.7703212037429092
+Linear kernel, c = 6: F = 0.7703212037429092
+Linear kernel, c = 7: F = 0.7703212037429092
+Linear kernel, c = 8: F = 0.7972354090363387
+Linear kernel, c = 9: F = 0.7972354090363387
+Linear kernel, c = 10: F = 0.7972354090363387
+Linear kernel, c = 11: F = 0.7972354090363387
+Linear kernel, c = 12: F = 0.7925329499331095
+Linear kernel, c = 13: F = 0.7656954743145779
+Linear kernel, c = 14: F = 0.7972354090363387
+Linear kernel, optimal c = 8: F = 0.7972354090363387
+0,000000000 0,001371335 8,000000000 0,000000000 8,000000000 0,000000000 4,936485747 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 8,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 7,999923483 8,000000000 8,000000000 8,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 8,000000000 4,894596546 8,000000000 8,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 8,000000000 8,000000000 8,000000000 0,000000000 0,000000000 8,000000000 8,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 3,702082687 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 8,000000000 8,000000000 8,000000000 0,000000000 7,692589101 0,000000000 8,000000000 8,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 8,000000000 1,713017121 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 8,000000000 0,000000000 8,000000000 0,000000000 0,000000000 8,000000000 8,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 7,948141166 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 6,889578673 0,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 8,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 3,991467967 0,000000000 0,000000000 0,000000000 5,058517906 
+
+Polynomial with degree equal to p = 2 kernel, c = 1: F = 0.8610041999163339
+Polynomial with degree equal to p = 2 kernel, c = 2: F = 0.855283075991523
+Polynomial with degree equal to p = 2 kernel, c = 3: F = 0.873472321928891
+Polynomial with degree equal to p = 2 kernel, c = 4: F = 0.8671515807940041
+Polynomial with degree equal to p = 2 kernel, c = 5: F = 0.8615030901805901
+Polynomial with degree equal to p = 2 kernel, c = 6: F = 0.8558841417119945
+Polynomial with degree equal to p = 2 kernel, c = 7: F = 0.8671515807940041
+Polynomial with degree equal to p = 2 kernel, c = 8: F = 0.8006308611264112
+Polynomial with degree equal to p = 2 kernel, c = 9: F = 0.7989234047325333
+Polynomial with degree equal to p = 2 kernel, c = 10: F = 0.7927339438273833
+Polynomial with degree equal to p = 2 kernel, c = 11: F = 0.7906797230694615
+Polynomial with degree equal to p = 2 kernel, c = 12: F = 0.7839549800204026
+Polynomial with degree equal to p = 2 kernel, c = 13: F = 0.7839549800204026
+Polynomial with degree equal to p = 2 kernel, c = 14: F = 0.7839549800204026
+Polynomial with degree equal to p = 3 kernel, c = 1: F = 0.6911568842124898
+Polynomial with degree equal to p = 3 kernel, c = 2: F = 0.7068438562015719
+Polynomial with degree equal to p = 3 kernel, c = 3: F = 0.6379365886806376
+Polynomial with degree equal to p = 3 kernel, c = 4: F = 0.7088463625849275
+Polynomial with degree equal to p = 3 kernel, c = 5: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 6: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 7: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 8: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 9: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 10: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 11: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 12: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 13: F = 0.689285769187839
+Polynomial with degree equal to p = 3 kernel, c = 14: F = 0.689285769187839
+Polynomial with degree equal to p = 4 kernel, c = 1: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 2: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 3: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 4: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 5: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 6: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 7: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 8: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 9: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 10: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 11: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 12: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 13: F = 0.6210540168242761
+Polynomial with degree equal to p = 4 kernel, c = 14: F = 0.6210540168242761
+Polynomial with degree equal to p = 5 kernel, c = 1: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 2: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 3: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 4: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 5: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 6: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 7: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 8: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 9: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 10: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 11: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 12: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 13: F = 0.6389052561912342
+Polynomial with degree equal to p = 5 kernel, c = 14: F = 0.6389052561912342
+Polynomial with degree equal to p = 6 kernel, c = 1: F = 0.7246116018443813
+Polynomial with degree equal to p = 6 kernel, c = 2: F = 0.7292871092978577
+Polynomial with degree equal to p = 6 kernel, c = 3: F = 0.7292871092978577
+Polynomial with degree equal to p = 6 kernel, c = 4: F = 0.7246116018443813
+Polynomial with degree equal to p = 6 kernel, c = 5: F = 0.7334675311771188
+Polynomial with degree equal to p = 6 kernel, c = 6: F = 0.756096090270113
+Polynomial with degree equal to p = 6 kernel, c = 7: F = 0.7292871092978577
+Polynomial with degree equal to p = 6 kernel, c = 8: F = 0.7246116018443813
+Polynomial with degree equal to p = 6 kernel, c = 9: F = 0.7334675311771188
+Polynomial with degree equal to p = 6 kernel, c = 10: F = 0.7243873035503252
+Polynomial with degree equal to p = 6 kernel, c = 11: F = 0.715361434763387
+Polynomial with degree equal to p = 6 kernel, c = 12: F = 0.7339961731592528
+Polynomial with degree equal to p = 6 kernel, c = 13: F = 0.7244144870036562
+Polynomial with degree equal to p = 6 kernel, c = 14: F = 0.7202605030679681
+Polynomial with degree equal to p = 7 kernel, c = 1: F = 0.7407346280695515
+Polynomial with degree equal to p = 7 kernel, c = 2: F = 0.6798559157661402
+Polynomial with degree equal to p = 7 kernel, c = 3: F = 0.6817290791876037
+Polynomial with degree equal to p = 7 kernel, c = 4: F = 0.701352544911153
+Polynomial with degree equal to p = 7 kernel, c = 5: F = 0.6261137750561141
+Polynomial with degree equal to p = 7 kernel, c = 6: F = 0.6732103201438551
+Polynomial with degree equal to p = 7 kernel, c = 7: F = 0.6592183641291033
+Polynomial with degree equal to p = 7 kernel, c = 8: F = 0.6425581718371378
+Polynomial with degree equal to p = 7 kernel, c = 9: F = 0.652139968020837
+Polynomial with degree equal to p = 7 kernel, c = 10: F = 0.6567028096912877
+Polynomial with degree equal to p = 7 kernel, c = 11: F = 0.6113092520518512
+Polynomial with degree equal to p = 7 kernel, c = 12: F = 0.6577432137757739
+Polynomial with degree equal to p = 7 kernel, c = 13: F = 0.6133116320237455
+Polynomial with degree equal to p = 7 kernel, c = 14: F = 0.6425581718371378
+Polynomial with degree equal to p = 8 kernel, c = 1: F = 0.5358835760218946
+Polynomial with degree equal to p = 8 kernel, c = 2: F = 0.5325281984301977
+Polynomial with degree equal to p = 8 kernel, c = 3: F = 0.5882035081946242
+Polynomial with degree equal to p = 8 kernel, c = 4: F = 0.6390209712523901
+Polynomial with degree equal to p = 8 kernel, c = 5: F = 0.5329206757778187
+Polynomial with degree equal to p = 8 kernel, c = 6: F = 0.5795644260930497
+Polynomial with degree equal to p = 8 kernel, c = 7: F = 0.6514555845187218
+Polynomial with degree equal to p = 8 kernel, c = 8: F = 0.5717961374595053
+Polynomial with degree equal to p = 8 kernel, c = 9: F = 0.5161923867384923
+Polynomial with degree equal to p = 8 kernel, c = 10: F = 0.6071508479748476
+Polynomial with degree equal to p = 8 kernel, c = 11: F = 0.5926081169697788
+Polynomial with degree equal to p = 8 kernel, c = 12: F = 0.5018811326883955
+Polynomial with degree equal to p = 8 kernel, c = 13: F = 0.5595888845831374
+Polynomial with degree equal to p = 8 kernel, c = 14: F = 0.5180571092029868
+Polynomial with degree equal to p = 9 kernel, c = 1: F = 0.6331770599681721
+Polynomial with degree equal to p = 9 kernel, c = 2: F = 0.6204469890934822
+Polynomial with degree equal to p = 9 kernel, c = 3: F = 0.5933497406832748
+Polynomial with degree equal to p = 9 kernel, c = 4: F = 0.5772296567179618
+Polynomial with degree equal to p = 9 kernel, c = 5: F = 0.5379676830253154
+Polynomial with degree equal to p = 9 kernel, c = 6: F = 0.5676134034637095
+Polynomial with degree equal to p = 9 kernel, c = 7: F = 0.5175912289314352
+Polynomial with degree equal to p = 9 kernel, c = 8: F = 0.5382064373828489
+Polynomial with degree equal to p = 9 kernel, c = 9: F = 0.5199752350136266
+Polynomial with degree equal to p = 9 kernel, c = 10: F = 0.49977853245892034
+Polynomial with degree equal to p = 9 kernel, c = 11: F = 0.5529276618627936
+Polynomial with degree equal to p = 9 kernel, c = 12: F = 0.5577812611704417
+Polynomial with degree equal to p = 9 kernel, c = 13: F = 0.6310853413700934
+Polynomial with degree equal to p = 9 kernel, c = 14: F = 0.5423004633180735
+Polynomial with degree equal to p = 10 kernel, c = 1: F = 0.6029144597298453
+Polynomial with degree equal to p = 10 kernel, c = 2: F = 0.593694778814764
+Polynomial with degree equal to p = 10 kernel, c = 3: F = 0.5087485419096817
+Polynomial with degree equal to p = 10 kernel, c = 4: F = 0.5201433595231808
+Polynomial with degree equal to p = 10 kernel, c = 5: F = 0.4885428522041653
+Polynomial with degree equal to p = 10 kernel, c = 6: F = 0.5961581491480681
+Polynomial with degree equal to p = 10 kernel, c = 7: F = 0.5487546122736364
+Polynomial with degree equal to p = 10 kernel, c = 8: F = 0.5520412861202778
+Polynomial with degree equal to p = 10 kernel, c = 9: F = 0.5882523284449054
+Polynomial with degree equal to p = 10 kernel, c = 10: F = 0.6519898149848934
+Polynomial with degree equal to p = 10 kernel, c = 11: F = 0.5366740146370556
+Polynomial with degree equal to p = 10 kernel, c = 12: F = 0.5542705615173729
+Polynomial with degree equal to p = 10 kernel, c = 13: F = 0.5461206065486384
+Polynomial with degree equal to p = 10 kernel, c = 14: F = 0.5618849211802968
+Polynomial with degree equal to p = 11 kernel, c = 1: F = 0.6648184446899275
+Polynomial with degree equal to p = 11 kernel, c = 2: F = 0.5298481694884521
+Polynomial with degree equal to p = 11 kernel, c = 3: F = 0.6559504909918826
+Polynomial with degree equal to p = 11 kernel, c = 4: F = 0.5350908405739364
+Polynomial with degree equal to p = 11 kernel, c = 5: F = 0.544622229006185
+Polynomial with degree equal to p = 11 kernel, c = 6: F = 0.6221535567948903
+Polynomial with degree equal to p = 11 kernel, c = 7: F = 0.6111053745722599
+Polynomial with degree equal to p = 11 kernel, c = 8: F = 0.5542705615173729
+Polynomial with degree equal to p = 11 kernel, c = 9: F = 0.4795081451014968
+Polynomial with degree equal to p = 11 kernel, c = 10: F = 0.4655843178270619
+Polynomial with degree equal to p = 11 kernel, c = 11: F = 0.5606122337883768
+Polynomial with degree equal to p = 11 kernel, c = 12: F = 0.5815105097234097
+Polynomial with degree equal to p = 11 kernel, c = 13: F = 0.5926081169697788
+Polynomial with degree equal to p = 11 kernel, c = 14: F = 0.5662443092013716
+Polynomial with degree equal to p = 12 kernel, c = 1: F = 0.4907888315604231
+Polynomial with degree equal to p = 12 kernel, c = 2: F = 0.531568641372118
+Polynomial with degree equal to p = 12 kernel, c = 3: F = 0.5520412861202778
+Polynomial with degree equal to p = 12 kernel, c = 4: F = 0.4562862215771215
+Polynomial with degree equal to p = 12 kernel, c = 5: F = 0.5606122337883768
+Polynomial with degree equal to p = 12 kernel, c = 6: F = 0.5793477733234195
+Polynomial with degree equal to p = 12 kernel, c = 7: F = 0.6157772259568532
+Polynomial with degree equal to p = 12 kernel, c = 8: F = 0.5363348905760706
+Polynomial with degree equal to p = 12 kernel, c = 9: F = 0.5972426659647904
+Polynomial with degree equal to p = 12 kernel, c = 10: F = 0.5702237496657367
+Polynomial with degree equal to p = 12 kernel, c = 11: F = 0.5161923867384923
+Polynomial with degree equal to p = 12 kernel, c = 12: F = 0.6157411499731085
+Polynomial with degree equal to p = 12 kernel, c = 13: F = 0.6111053745722599
+Polynomial with degree equal to p = 12 kernel, c = 14: F = 0.4857289553645828
+Polynomial with degree equal to p = 13 kernel, c = 1: F = 0.6578802799129628
+Polynomial with degree equal to p = 13 kernel, c = 2: F = 0.5275090475358122
+Polynomial with degree equal to p = 13 kernel, c = 3: F = 0.5722591103213941
+Polynomial with degree equal to p = 13 kernel, c = 4: F = 0.5524442715037373
+Polynomial with degree equal to p = 13 kernel, c = 5: F = 0.6077377279035909
+Polynomial with degree equal to p = 13 kernel, c = 6: F = 0.4877939754929625
+Polynomial with degree equal to p = 13 kernel, c = 7: F = 0.5327754506829876
+Polynomial with degree equal to p = 13 kernel, c = 8: F = 0.5005083022704169
+Polynomial with degree equal to p = 13 kernel, c = 9: F = 0.5296423613255297
+Polynomial with degree equal to p = 13 kernel, c = 10: F = 0.6207482766354836
+Polynomial with degree equal to p = 13 kernel, c = 11: F = 0.5222284904374047
+Polynomial with degree equal to p = 13 kernel, c = 12: F = 0.56093304435939
+Polynomial with degree equal to p = 13 kernel, c = 13: F = 0.5041344605257387
+Polynomial with degree equal to p = 13 kernel, c = 14: F = 0.6249684305355906
+Polynomial with degree equal to p = 14 kernel, c = 1: F = 0.6894994097473205
+Polynomial with degree equal to p = 14 kernel, c = 2: F = 0.6943752693837687
+Polynomial with degree equal to p = 14 kernel, c = 3: F = 0.5657111568628721
+Polynomial with degree equal to p = 14 kernel, c = 4: F = 0.5090471891922176
+Polynomial with degree equal to p = 14 kernel, c = 5: F = 0.5108595064090005
+Polynomial with degree equal to p = 14 kernel, c = 6: F = 0.4838873203088277
+Polynomial with degree equal to p = 14 kernel, c = 7: F = 0.5855855855855856
+Polynomial with degree equal to p = 14 kernel, c = 8: F = 0.6571401631782703
+Polynomial with degree equal to p = 14 kernel, c = 9: F = 0.5221827878332186
+Polynomial with degree equal to p = 14 kernel, c = 10: F = 0.5284735880087983
+Polynomial with degree equal to p = 14 kernel, c = 11: F = 0.5926081169697788
+Polynomial with degree equal to p = 14 kernel, c = 12: F = 0.4926652833433033
+Polynomial with degree equal to p = 14 kernel, c = 13: F = 0.5290716008742702
+Polynomial with degree equal to p = 14 kernel, c = 14: F = 0.5849537558904441
+Polynomial kernel, optimal p = 2, c = 3: F = 0.873472321928891
+0,000000000 1,963695547 3,000000000 0,000025084 3,000000000 0,000000537 2,999953594 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 3,000000000 0,000000000 0,000000000 0,000405459 3,000000000 3,000000000 0,000033662 0,000000000 0,000005792 0,000000000 3,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000100843 0,000000000 0,871491161 0,140058004 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 3,000000000 0,000039163 3,000000000 3,000000000 3,000000000 3,000000000 1,740418906 0,000155575 0,000159479 2,999956013 0,000000000 3,000000000 2,999992650 3,000000000 3,000000000 3,000000000 1,140306773 0,000000000 0,000000000 0,000000000 3,000000000 0,000000000 0,000000000 3,000000000 0,000000000 0,000000000 3,000000000 2,999978584 2,999962708 0,000000000 0,000000000 3,000000000 3,000000000 0,272129053 0,000000000 0,000000000 0,000000000 0,000068954 0,000000000 0,000000000 0,000000000 0,000000000 3,000000000 0,815907047 1,633786873 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,001270230 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 3,000000000 0,000344684 2,403362636 0,000000000 0,892610680 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000070 2,999894585 0,334556810 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,142508049 0,000084918 0,000023854 0,000032522 3,000000000 0,000000000 0,000000000 0,000000000 3,000000000 3,000000000 2,999968607 0,000046789 2,999886059 0,316591112 3,000000000 3,000000000 0,637507272 0,000000013 0,000000000 0,000000000 0,000000000 0,000002040 0,000000000 0,000000000 0,529465269 0,000000000 0,000000000 0,000000000 0,000000000 0,000016356 0,000142391 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,006149844 0,000000000 0,000000000 0,000022960 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,103078193 0,000000000 0,001885421 0,000000000 0,000000000 0,000157809 0,000000000 0,000000000 0,000000000 0,133313237 1,572919911 3,000000000 0,000337958 0,000000000 0,001400648 1,242919638 0,000085758 3,000000000 1,115251229 0,000076302 0,000000000 1,523654689 3,000000000 0,000000000 0,000649420 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,446727468 0,000000000 3,000000000 0,000000000 0,426960596 1,966435502 0,365683670 0,000000000 2,963284660 0,000226332 0,000000000 0,000000000 3,000000000 0,000000000 0,941292346 0,000000000 0,000000000 0,000000000 3,000000000 0,019552553 0,000000000 3,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,000000000 0,021701207 0,000000000 0,000000000 0,000000000 1,796502522 
+
+Polynomial with degree less than p = 1 kernel, c = 1: F = 0.5996570848039151
+Polynomial with degree less than p = 1 kernel, c = 2: F = 0.7095104384252758

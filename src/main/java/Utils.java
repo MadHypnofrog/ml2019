@@ -220,4 +220,44 @@ public class Utils {
             return variable(queryNum, objects, classes, windowSize, classesNum, d, k);
         }
     }
+
+    public static double scalarProduct(double[] fst, double[] snd) {
+        double res = 0;
+        for (int i = 0; i < fst.length; i++) res += fst[i] * snd[i];
+        return res;
+    }
+
+    public static double[][] multiply(double[][] fst, double[][] snd) {
+        double[][] res = new double[fst.length][snd[0].length];
+        double[][] sndTransposed = transpose(snd);
+        for (int i = 0; i < fst.length; i++) {
+            double[] aFst = fst[i];
+            for (int j = 0; j < snd[0].length; j++) {
+                res[i][j] = scalarProduct(aFst, sndTransposed[j]);
+            }
+        }
+        return res;
+    }
+
+    public static double[][] transpose(double[][] matrix) {
+        double[][] res = new double[matrix[0].length][matrix.length];
+        for (int i = 0; i < matrix[0].length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                res[i][j] = matrix[j][i];
+            }
+        }
+        return res;
+    }
+
+    public static double[] subtract(double[] fst, double[] snd) {
+        double[] res = new double[fst.length];
+        for (int i = 0; i < fst.length; i++) res[i] = fst[i] - snd[i];
+        return res;
+    }
+
+    public static double norm(double[] vec) {
+        double res = 0;
+        for (int i = 0; i < vec.length; i++) res += vec[i] * vec[i];
+        return Math.sqrt(res);
+    }
 }
