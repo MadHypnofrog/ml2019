@@ -1,7 +1,18 @@
 import javafx.util.Pair;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtils;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.xy.XYSeriesCollection;
 
+import java.awt.*;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
@@ -86,60 +97,6 @@ public class Utils {
         return 2 / (Math.PI * (Math.exp(val) + Math.exp(- val)));
     }
 
-    public static int fixed(int queryNum, double[][] train, int[] values, double d, int classesNum,
-                        BiFunction<double[], double[], Double> distance,
-                         Function<Double, Double> kernel) {
-        List<Pair<Double, Integer>> distances = new ArrayList<>();
-        double[] query = train[queryNum];
-        for (int i = 0; i < train.length; i++) {
-            if (i != queryNum) {
-                distances.add(new Pair<>(distance.apply(query, train[i]), i));
-            }
-        }
-        double[] scores = new double[classesNum];
-        for (Pair<Double, Integer> p: distances) {
-            double weight = kernel.apply(p.getKey() / d);
-            scores[values[p.getValue()] - 1] += weight;
-        }
-        double max = 0;
-        int result = 0;
-        for (int i = 0; i < classesNum; i++) {
-            if (scores[i] > max) {
-                max = scores[i];
-                result = i + 1;
-            }
-        }
-        return result;
-    }
-
-    public static int variable(int queryNum, double[][] train, int[] values, double k, int classesNum,
-                        BiFunction<double[], double[], Double> distance,
-                        Function<Double, Double> kernel) {
-        List<Pair<Double, Integer>> distances = new ArrayList<>();
-        double[] query = train[queryNum];
-        for (int i = 0; i < train.length; i++) {
-            if (i != queryNum) {
-                distances.add(new Pair<>(distance.apply(query, train[i]), i));
-            }
-        }
-        distances.sort(Comparator.comparing(Pair::getKey));
-        double d = distances.get((int)k).getKey();
-        double[] scores = new double[classesNum];
-        for (Pair<Double, Integer> p: distances) {
-            double weight = kernel.apply(p.getKey() / d);
-            scores[values[p.getValue()] - 1] += weight;
-        }
-        double max = 0;
-        int result = 0;
-        for (int i = 0; i < classesNum; i++) {
-            if (scores[i] > max) {
-                max = scores[i];
-                result = i + 1;
-            }
-        }
-        return result;
-    }
-
     public static double fmeasure(int[][] cm) {
         int k = cm.length;
         int totalSum = 0;
@@ -197,30 +154,6 @@ public class Utils {
         return fT;
     }
 
-    public static int learnAndAnswerQuery(double[][] objects, int[] classes, int queryNum, int classesNum,
-                                      String distance, String kernel, String window, double windowSize) {
-        BiFunction<double[], double[], Double> d = (fst, snd) -> {
-            try {
-                return (double)Utils.class.getDeclaredMethod(distance, double[].class, double[].class)
-                        .invoke(null, fst, snd);
-            } catch (Exception e) {
-                return 0D;
-            }
-        };
-        Function<Double, Double> k = x -> {
-            try {
-                return (double)Utils.class.getDeclaredMethod(kernel, double.class).invoke(null, x);
-            } catch (Exception e) {
-                return 0D;
-            }
-        };
-        if (window.equals("fixed")) {
-            return fixed(queryNum, objects, classes, windowSize, classesNum, d, k);
-        } else {
-            return variable(queryNum, objects, classes, windowSize, classesNum, d, k);
-        }
-    }
-
     public static double scalarProduct(double[] fst, double[] snd) {
         double res = 0;
         for (int i = 0; i < fst.length; i++) res += fst[i] * snd[i];
@@ -260,4 +193,37 @@ public class Utils {
         for (int i = 0; i < vec.length; i++) res += vec[i] * vec[i];
         return Math.sqrt(res);
     }
+
+    public static void writeChartForDS(String chartName, XYSeriesCollection ds, String xName, String yName) {
+        JFreeChart ch = ChartFactory.createXYLineChart(chartName,
+                xName, yName, ds, PlotOrientation.VERTICAL, false, false, false);
+        final XYPlot plot = ch.getXYPlot();
+        XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
+        renderer.setSeriesPaint(0, Color.RED);
+        renderer.setSeriesPaint(1, Color.BLUE);
+        renderer.setSeriesStroke(0, new BasicStroke(2.0f));
+        renderer.setSeriesStroke(1, new BasicStroke(2.0f));
+        plot.setBackgroundPaint(Color.white);
+        plot.setRangeGridlinePaint(Color.black);
+        plot.setRangeGridlinesVisible(true);
+        plot.setDomainGridlinePaint(Color.black);
+        plot.setDomainGridlinesVisible(true);
+        plot.setRenderer(renderer);
+        try {
+            OutputStream out = new FileOutputStream(ch.getTitle().getText() + ".png");
+            ChartUtils.writeChartAsPNG(out, ch, 1280, 720);
+            out.close();
+        } catch (IOException ex) {
+        }
+    }
+
+    public static <T> List<T> mergeExcept(List<List<T>> lists, int... ex) {
+        List<T> res = new ArrayList<>();
+        List<Integer> listEx = Arrays.stream(ex).boxed().collect(Collectors.toList());
+        for (int i = 0; i < lists.size(); i++) {
+            if (!listEx.contains(i)) res.addAll(lists.get(i));
+        }
+        return res;
+    }
+
 }

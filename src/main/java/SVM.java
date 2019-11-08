@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SVM {
 
-    public static Pair<int[][], double[]> train(int n, double[][] kernel, int[] target, int c, ArrayList<Integer> test) {
+    private static Pair<int[][], double[]> train(int n, double[][] kernel, int[] target, int c, ArrayList<Integer> test) {
         double[] res = new double[n];
         double F = 0;
         for (int it = 0; it < 100; it++) {
@@ -23,86 +23,62 @@ public class SVM {
                 if (test.contains(i)) continue;
                 for (int j = i + 1; j < n; j++) {
                     if (test.contains(j)) continue;
-                    double mu;
+                    double mu, muMin, a, z, L, R;
                     if (target[i] == target[j]) {
-                        double L = Math.max(-res[i], res[j] - c);
-                        double R = Math.min(c - res[i], res[j]);
-                        //                        System.out.println("FST " + L + "  " + R);
-                        double muMin = 0;
+                        L = Math.max(-res[i], res[j] - c);
+                        R = Math.min(c - res[i], res[j]);
+                        muMin = 0;
                         for (int k = 0; k < n; k++) {
                             if (test.contains(k)) continue;
                             muMin += res[k] * (kernel[i][k] - kernel[j][k]);
                         }
-                        double a = (2 * kernel[i][j] - kernel[i][i] - kernel[j][j]);
-                        //                        System.out.println(muMin + "  " + a);
-                        double z = muMin / a;
-                        if (a < 0) {
-                            if (z >= L && z <= R) mu = z;
-                            else {
-                                if (z < L) mu = L;
-                                else mu = R;
-                            }
-                            F += -0.5 * (2 * muMin * mu - a * mu * mu);
-                        }
-                        else if (a > 0) {
-                            if (z >= L && z <= R) {
-                                if (z - L > R - z) mu = L;
-                                else mu = R;
-                            }
-                            else {
-                                if (z < L) mu = R;
-                                else mu = L;
-                            }
-                            F += -0.5 * (2 * muMin * mu - a * mu * mu);
-                        } else {
-                            muMin *= (-0.5);
-                            if (muMin < 0) mu = L;
-                            else mu = R;
-                            F += 2 * muMin * mu;
-                        }
-                        res[i] += mu;
-                        res[j] -= mu;
+                        a = (2 * kernel[i][j] - kernel[i][i] - kernel[j][j]);
+                        z = muMin / a;
                     } else {
-                        double L = Math.max(-res[i], -res[j]);
-                        double R = Math.min(c - res[i], c - res[j]);
-                        //                        System.out.println("SND " + L + "  " + R);
-                        double muMin = 0;
+                        L = Math.max(-res[i], -res[j]);
+                        R = Math.min(c - res[i], c - res[j]);
+                        muMin = 0;
                         for (int k = 0; k < n; k++) {
                             if (test.contains(k)) continue;
                             muMin += res[k] * (kernel[i][k] + kernel[j][k]);
                         }
                         muMin -= 2;
-                        double a = (-2 * kernel[i][j] - kernel[i][i] - kernel[j][j]);
-                        //                        System.out.println(muMin + "  " + a);
-                        double z = muMin / a;
-                        if (a < 0) {
-                            if (z >= L && z <= R) mu = z;
-                            else {
-                                if (z < L) mu = L;
-                                else mu = R;
-                            }
-                            F += -0.5 * (2 * muMin * mu - a * mu * mu);
-                        }
-                        else if (a > 0) {
-                            if (z >= L && z <= R) {
-                                if (z - L > R - z) mu = L;
-                                else mu = R;
-                            }
-                            else {
-                                if (z < L) mu = R;
-                                else mu = L;
-                            }
-                            F += -0.5 * (2 * muMin * mu - a * mu * mu);
-                        } else {
-                            muMin *= (-0.5);
-                            if (muMin < 0) mu = L;
+                        a = (-2 * kernel[i][j] - kernel[i][i] - kernel[j][j]);
+                        z = muMin / a;
+                    }
+
+                    if (a < 0) {
+                        if (z >= L && z <= R) mu = z;
+                        else {
+                            if (z < L) mu = L;
                             else mu = R;
-                            F += 2 * muMin * mu;
                         }
+                        F += -0.5 * (2 * muMin * mu - a * mu * mu);
+                    }
+                    else if (a > 0) {
+                        if (z >= L && z <= R) {
+                            if (z - L > R - z) mu = L;
+                            else mu = R;
+                        }
+                        else {
+                            if (z < L) mu = R;
+                            else mu = L;
+                        }
+                        F += -0.5 * (2 * muMin * mu - a * mu * mu);
+                    } else {
+                        muMin *= (-0.5);
+                        if (muMin < 0) mu = L;
+                        else mu = R;
+                        F += 2 * muMin * mu;
+                    }
+
+                    if (target[i] == target[j]) {
+                        res[i] += mu;
+                        res[j] -= mu;
+                    } else {
                         res[i] += mu;
                         res[j] += mu;
                     }
-                    //                    System.out.println(String.format("Descending %d and %d, mu = %.6f, Fnew = %.6f", i, j, mu, F));
                 }
             }
             if (F - oldF < 10e-70) break;
@@ -119,7 +95,6 @@ public class SVM {
             }
             bb *= target[i];
             trueB += target[i] - bb;
-//            System.out.println(i + "  " + trueB);
             break;
         }
         b = trueB / cnt;
@@ -139,7 +114,7 @@ public class SVM {
         return new Pair<>(conf, fres);
     }
 
-    public static double calcFMeasure(int samples, int batchSize, double[][] kernel, int[] classes, int c) {
+    private static double calcFMeasure(int samples, int batchSize, double[][] kernel, int[] classes, int c) {
         int[][] conf = new int[2][2];
         for (int i = 0; i < samples; i += batchSize) {
             ArrayList<Integer> test = new ArrayList<>();
@@ -157,7 +132,7 @@ public class SVM {
         return Utils.fmeasure(conf);
     }
 
-    public static void findOptimalForFile(String fileName) throws Exception {
+    private static void findOptimalForFile(String fileName) throws Exception {
         String[] tokens = fileName.split("/");
         String name = tokens[tokens.length - 1].split("\\.")[0];
         BufferedWriter log = new BufferedWriter(new FileWriter("l2og-" + name + ".txt"));
@@ -176,100 +151,100 @@ public class SVM {
             }
             int batchSize = samples / 10;
             double[][] kernel = new double[samples][samples];
-//            // Linear
-//            {
-//                double maxF = 0;
-//                int maxC = 0;
-//                for (int i = 0; i < samples; i++) {
-//                    for (int j = 0; j < samples; j++) {
-//                        kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
-//                    }
-//                }
-//                for (int c = 1; c < 15; c++) {
-//                    double F = calcFMeasure(samples, batchSize, kernel, classes, c);
-//                    if (F > maxF) {
-//                        maxF = F;
-//                        maxC = c;
-//                    }
-//                    log.write("Linear kernel, c = " + c + ": F = " + F + "\n");
-//                    log.flush();
-//                }
-//                log.write("Linear kernel, optimal c = " + maxC + ": F = " + maxF + "\n");
-//                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
-//                for (double d : linearFormula) log.write(String.format("%.9f ", d));
-//                log.write("\n\n");
-//                log.flush();
-//            }
-//            //Polynomial with degree equal to p
-//            {
-//                double maxF = 0;
-//                int maxP = 0;
-//                int maxC = 0;
-//                for (int p = 2; p < 15; p++) {
-//                    for (int i = 0; i < samples; i++) {
-//                        for (int j = 0; j < samples; j++) {
-//                            kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
-//                        }
-//                    }
-//                    for (int c = 1; c < 15; c++) {
-//                        double F = calcFMeasure(samples, batchSize, kernel, classes, c);
-//                        if (F > maxF) {
-//                            maxF = F;
-//                            maxC = c;
-//                            maxP = p;
-//                        }
-//                        log.write("Polynomial with degree equal to p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
-//                        log.flush();
-//                    }
-//                }
-//                log.write("Polynomial kernel, optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
-//                for (int i = 0; i < samples; i++) {
-//                    for (int j = 0; j < samples; j++) {
-//                        kernel[i][j] = 0;
-//                        kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
-//                        for (int p = 1; p < maxP; p++) kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
-//                    }
-//                }
-//                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
-//                for (double d : linearFormula) log.write(String.format("%.9f ", d));
-//                log.write("\n\n");
-//                log.flush();
-//            }
-//            //Polynomial with degree less than p
-//            {
-//                double maxF = 0;
-//                int maxP = 0;
-//                int maxC = 0;
-//                for (int p = 1; p < 15; p++) {
-//                    for (int i = 0; i < samples; i++) {
-//                        for (int j = 0; j < samples; j++) {
-//                            double sc = Utils.scalarProduct(objects[i], objects[j]) + 1;
-//                            kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, p);
-//                        }
-//                    }
-//                    for (int c = 1; c < 15; c++) {
-//                        double F = calcFMeasure(samples, batchSize, kernel, classes, c);
-//                        if (F > maxF) {
-//                            maxF = F;
-//                            maxC = c;
-//                            maxP = p;
-//                        }
-//                        log.write("Polynomial with degree less than p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
-//                        log.flush();
-//                    }
-//                }
-//                log.write("Polynomial kernel (with degree less than), optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
-//                for (int i = 0; i < samples; i++) {
-//                    for (int j = 0; j < samples; j++) {
-//                        double sc = Utils.scalarProduct(objects[i], objects[j]) + 1;
-//                        kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, maxP);
-//                    }
-//                }
-//                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
-//                for (double d : linearFormula) log.write(String.format("%.9f ", d));
-//                log.write("\n\n");
-//                log.flush();
-//            }
+            // Linear
+            {
+                double maxF = 0;
+                int maxC = 0;
+                for (int i = 0; i < samples; i++) {
+                    for (int j = 0; j < samples; j++) {
+                        kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
+                    }
+                }
+                for (int c = 1; c < 15; c++) {
+                    double F = calcFMeasure(samples, batchSize, kernel, classes, c);
+                    if (F > maxF) {
+                        maxF = F;
+                        maxC = c;
+                    }
+                    log.write("Linear kernel, c = " + c + ": F = " + F + "\n");
+                    log.flush();
+                }
+                log.write("Linear kernel, optimal c = " + maxC + ": F = " + maxF + "\n");
+                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
+                for (double d : linearFormula) log.write(String.format("%.9f ", d));
+                log.write("\n\n");
+                log.flush();
+            }
+            //Polynomial with degree equal to p
+            {
+                double maxF = 0;
+                int maxP = 0;
+                int maxC = 0;
+                for (int p = 2; p < 15; p++) {
+                    for (int i = 0; i < samples; i++) {
+                        for (int j = 0; j < samples; j++) {
+                            kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
+                        }
+                    }
+                    for (int c = 1; c < 15; c++) {
+                        double F = calcFMeasure(samples, batchSize, kernel, classes, c);
+                        if (F > maxF) {
+                            maxF = F;
+                            maxC = c;
+                            maxP = p;
+                        }
+                        log.write("Polynomial with degree equal to p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
+                        log.flush();
+                    }
+                }
+                log.write("Polynomial kernel, optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
+                for (int i = 0; i < samples; i++) {
+                    for (int j = 0; j < samples; j++) {
+                        kernel[i][j] = 0;
+                        kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
+                        for (int p = 1; p < maxP; p++) kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
+                    }
+                }
+                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
+                for (double d : linearFormula) log.write(String.format("%.9f ", d));
+                log.write("\n\n");
+                log.flush();
+            }
+            //Polynomial with degree less than p
+            {
+                double maxF = 0;
+                int maxP = 0;
+                int maxC = 0;
+                for (int p = 1; p < 15; p++) {
+                    for (int i = 0; i < samples; i++) {
+                        for (int j = 0; j < samples; j++) {
+                            double sc = Utils.scalarProduct(objects[i], objects[j]) + 1;
+                            kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, p);
+                        }
+                    }
+                    for (int c = 1; c < 15; c++) {
+                        double F = calcFMeasure(samples, batchSize, kernel, classes, c);
+                        if (F > maxF) {
+                            maxF = F;
+                            maxC = c;
+                            maxP = p;
+                        }
+                        log.write("Polynomial with degree less than p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
+                        log.flush();
+                    }
+                }
+                log.write("Polynomial kernel (with degree less than), optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
+                for (int i = 0; i < samples; i++) {
+                    for (int j = 0; j < samples; j++) {
+                        double sc = Utils.scalarProduct(objects[i], objects[j]) + 1;
+                        kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, maxP);
+                    }
+                }
+                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
+                for (double d : linearFormula) log.write(String.format("%.9f ", d));
+                log.write("\n\n");
+                log.flush();
+            }
             //Radial
             {
                 double maxF = 0;
@@ -309,7 +284,7 @@ public class SVM {
     }
 
     public static void main(String[] args) throws Exception {
-//        findOptimalForFile("src/main/resources/chips.csv");
+        findOptimalForFile("src/main/resources/chips.csv");
         findOptimalForFile("src/main/resources/geyser.csv");
     }
 }

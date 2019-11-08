@@ -97,41 +97,8 @@ public class Linear {
         ds.addSeries(series);
         ds2.addSeries(series2);
         ds2.addSeries(series3);
-        JFreeChart ch = ChartFactory.createXYLineChart("Q(w) to Iterations (training set " + num + ")",
-                "Iterations", "Q(w)", ds, PlotOrientation.VERTICAL, false, false, false);
-        JFreeChart ch2 = ChartFactory.createXYLineChart("Q(w) to Iterations (test set " + num + ")",
-                "Iterations", "Q(w)", ds2, PlotOrientation.VERTICAL, false, false, false);
-        final XYPlot plot = ch.getXYPlot();
-        final XYPlot plot2 = ch2.getXYPlot();
-        XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-        renderer.setSeriesPaint(0, Color.RED);
-        renderer.setSeriesStroke(0, new BasicStroke(2.0f));
-        renderer.setSeriesPaint(1, Color.BLUE);
-        renderer.setSeriesStroke(1, new BasicStroke(2.0f));
-        plot.setBackgroundPaint(Color.white);
-        plot.setRangeGridlinePaint(Color.black);
-        plot.setRangeGridlinesVisible(true);
-        plot.setDomainGridlinePaint(Color.black);
-        plot.setDomainGridlinesVisible(true);
-        plot2.setBackgroundPaint(Color.white);
-        plot2.setRangeGridlinePaint(Color.black);
-        plot2.setRangeGridlinesVisible(true);
-        plot2.setDomainGridlinePaint(Color.black);
-        plot2.setDomainGridlinesVisible(true);
-        plot.setRenderer(renderer);
-        plot2.setRenderer(renderer);
-        try {
-            OutputStream out = new FileOutputStream(ch.getTitle().getText() + ".png");
-            ChartUtils.writeChartAsPNG(out, ch, 1280, 720);
-            out.close();
-        } catch (IOException ex) {
-        }
-        try {
-            OutputStream out = new FileOutputStream(ch2.getTitle().getText() + ".png");
-            ChartUtils.writeChartAsPNG(out, ch2, 1280, 720);
-            out.close();
-        } catch (IOException ex) {
-        }
+        Utils.writeChartForDS("Q(w) to Iterations (training set " + num + ")", ds, "Iterations", "Q(w)");
+        Utils.writeChartForDS("Q(w) to Iterations (test set " + num + ")", ds2, "Iterations", "Q(w)");
         return new Pair<>(res, qTest);
     }
 

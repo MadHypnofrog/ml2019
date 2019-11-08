@@ -1,4 +1,5 @@
 import com.opencsv.CSVReader;
+import javafx.util.Pair;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartUtils;
@@ -23,15 +24,96 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class KNN {
 
-    public static double calculateFMeasureForSetup(double[][] objects, int[] classes, int classesNum,
-                                                   String distance, String kernel, String window, double windowSize) {
+    private static int learnAndAnswerQuery(double[][] objects, int[] classes, int queryNum, int classesNum,
+                                           String distance, String kernel, String window, double windowSize) {
+        BiFunction<double[], double[], Double> d = (fst, snd) -> {
+            try {
+                return (double)Utils.class.getDeclaredMethod(distance, double[].class, double[].class)
+                        .invoke(null, fst, snd);
+            } catch (Exception e) {
+                return 0D;
+            }
+        };
+        Function<Double, Double> k = x -> {
+            try {
+                return (double)Utils.class.getDeclaredMethod(kernel, double.class).invoke(null, x);
+            } catch (Exception e) {
+                return 0D;
+            }
+        };
+        if (window.equals("fixed")) {
+            return fixed(queryNum, objects, classes, windowSize, classesNum, d, k);
+        } else {
+            return variable(queryNum, objects, classes, windowSize, classesNum, d, k);
+        }
+    }
+
+    private static int fixed(int queryNum, double[][] train, int[] values, double d, int classesNum,
+                             BiFunction<double[], double[], Double> distance,
+                             Function<Double, Double> kernel) {
+        List<Pair<Double, Integer>> distances = new ArrayList<>();
+        double[] query = train[queryNum];
+        for (int i = 0; i < train.length; i++) {
+            if (i != queryNum) {
+                distances.add(new Pair<>(distance.apply(query, train[i]), i));
+            }
+        }
+        double[] scores = new double[classesNum];
+        for (Pair<Double, Integer> p: distances) {
+            double weight = kernel.apply(p.getKey() / d);
+            scores[values[p.getValue()] - 1] += weight;
+        }
+        double max = 0;
+        int result = 0;
+        for (int i = 0; i < classesNum; i++) {
+            if (scores[i] > max) {
+                max = scores[i];
+                result = i + 1;
+            }
+        }
+        return result;
+    }
+
+    private static int variable(int queryNum, double[][] train, int[] values, double k, int classesNum,
+                                BiFunction<double[], double[], Double> distance,
+                                Function<Double, Double> kernel) {
+        List<Pair<Double, Integer>> distances = new ArrayList<>();
+        double[] query = train[queryNum];
+        for (int i = 0; i < train.length; i++) {
+            if (i != queryNum) {
+                distances.add(new Pair<>(distance.apply(query, train[i]), i));
+            }
+        }
+        distances.sort(Comparator.comparing(Pair::getKey));
+        double d = distances.get((int)k).getKey();
+        double[] scores = new double[classesNum];
+        for (Pair<Double, Integer> p: distances) {
+            double weight = kernel.apply(p.getKey() / d);
+            scores[values[p.getValue()] - 1] += weight;
+        }
+        double max = 0;
+        int result = 0;
+        for (int i = 0; i < classesNum; i++) {
+            if (scores[i] > max) {
+                max = scores[i];
+                result = i + 1;
+            }
+        }
+        return result;
+    }
+
+    private static double calculateFMeasureForSetup(double[][] objects, int[] classes, int classesNum,
+                                                    String distance, String kernel, String window, double windowSize) {
         int[][] cm = new int[classesNum][classesNum];
         for (int i = 0; i < objects.length; i++) {
-            int res = Utils.learnAndAnswerQuery(objects, classes, i, classesNum, distance, kernel, window, windowSize);
+            int res = learnAndAnswerQuery(objects, classes, i, classesNum, distance, kernel, window, windowSize);
             if (res == 0) return -1;
             cm[res - 1][classes[i] - 1]++;
         }
@@ -134,25 +216,7 @@ public class KNN {
                 }
                 log.flush();
                 ds.addSeries(series);
-                JFreeChart ch = ChartFactory.createXYLineChart(distance + "-" + kernel + "-fixed",
-                        "Window size", "F1 measure", ds, PlotOrientation.VERTICAL, false, false, false);
-                final XYPlot plot = ch.getXYPlot();
-                XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-                renderer.setSeriesPaint(0, Color.RED);
-                renderer.setSeriesStroke(0, new BasicStroke(4.0f));
-                plot.setBackgroundPaint(Color.white);
-                plot.setRangeGridlinePaint(Color.black);
-                plot.setRangeGridlinesVisible(true);
-                plot.setDomainGridlinePaint(Color.black);
-                plot.setDomainGridlinesVisible(true);
-                plot.setRenderer(renderer);
-                try {
-                    OutputStream out = new FileOutputStream(ch.getTitle().getText() + ".png");
-                    ChartUtils.writeChartAsPNG(out, ch, 1280, 720);
-                    out.close();
-                } catch (IOException ex) {
-                }
-
+                Utils.writeChartForDS(distance + "-" + kernel + "-fixed", ds, "Window size", "F");
 
                 XYSeriesCollection ds1 = new XYSeriesCollection();
                 XYSeries series1 = new XYSeries("");
@@ -174,21 +238,7 @@ public class KNN {
                 }
                 log.flush();
                 ds1.addSeries(series1);
-                JFreeChart ch1 = ChartFactory.createXYLineChart(distance + "-" + kernel + "-variable",
-                        "Neighbors", "F1 measure", ds1, PlotOrientation.VERTICAL, false, false, false);
-                final XYPlot plot1 = ch1.getXYPlot();
-                plot1.setBackgroundPaint(Color.white);
-                plot1.setRangeGridlinePaint(Color.black);
-                plot1.setRangeGridlinesVisible(true);
-                plot1.setDomainGridlinePaint(Color.black);
-                plot1.setDomainGridlinesVisible(true);
-                plot1.setRenderer(renderer);
-                try {
-                    OutputStream out = new FileOutputStream(ch1.getTitle().getText() + ".png");
-                    ChartUtils.writeChartAsPNG(out, ch1, 1280, 720);
-                    out.close();
-                } catch (IOException ex) {
-                }
+                Utils.writeChartForDS(distance + "-" + kernel + "-variable", ds1, "Window size", "F");
             }
         }
         log.write("Optimal combination: " + maxSetup + ": " + max + "\n");
