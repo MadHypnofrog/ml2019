@@ -3,19 +3,15 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -95,11 +91,9 @@ public class Bayes {
         }
         double[] lambdas = new double[2];
         lambdas[0] = lambdas[1] = 1;
-        double maxF = 0;
-        double maxA = 0.01;
         XYSeriesCollection ds1 = new XYSeriesCollection();
         XYSeries series1 = new XYSeries("");
-        for (double alpha = 0; alpha <= 0.5; alpha += 0.01) {
+        for (double alpha = 0.01; alpha <= 1; alpha += 0.01) {
             int[][] conf = new int[2][2];
             for (int i = 0; i < 10; i++) {
                 List<Integer> results = classify(2, lambdas, alpha, Utils.mergeExcept(classes, i),
@@ -108,38 +102,34 @@ public class Bayes {
                     conf[results.get(j)][classes.get(i).get(j)]++;
                 }
             }
-            double fMeasure = Utils.fmeasure(conf);
-            if (fMeasure > maxF) {
-                maxF = fMeasure;
-                maxA = alpha;
-            }
-            series1.add(alpha, fMeasure);
-            log.write(String.format("Alpha = %.2f, F1 = %.6f\n", alpha, fMeasure));
+            double f1 = Utils.fmeasure(conf);
+            series1.add(alpha, f1);
+            log.write(String.format("Alpha = %.2f, f1 = %.6f\n", alpha, f1));
             log.flush();
         }
         ds1.addSeries(series1);
-        Utils.writeChartForDS("Alpha to F1", ds1, "Alpha", "F1");
+        Utils.writeChartForDS("Alpha to f1", ds1, "Alpha", "F1");
         XYSeriesCollection ds = new XYSeriesCollection();
         XYSeries series = new XYSeries("");
         while (true) {
             int[][] conf = new int[2][2];
             for (int i = 0; i < 10; i++) {
-                List<Integer> results = classify(2, lambdas, maxA, Utils.mergeExcept(classes, i),
+                List<Integer> results = classify(2, lambdas, 0.00001, Utils.mergeExcept(classes, i),
                         Utils.mergeExcept(messages, i), messages.get(i));
                 for (int j = 0; j < results.size(); j++) {
                     conf[results.get(j)][classes.get(i).get(j)]++;
                 }
             }
-            double precision = (double)conf[0][0] / (conf[0][0] + conf[0][1]);
-            log.write(String.format("Lambdas: %.1f %.1f Precision: %.6f\n", lambdas[0], lambdas[1], precision));
+            double f1 = Utils.fmeasure(conf);
+            log.write(String.format("Lambdas: %.1f %.1f F1: %.6f\n", lambdas[0], lambdas[1], f1));
             log.write(String.format("Matrix: %d %d %d %d\n", conf[0][0], conf[0][1], conf[1][0], conf[1][1]));
             log.flush();
-            series.add(lambdas[1], precision);
-            if (precision == 1) break;
-            else lambdas[1] += 10e49;
+            series.add(Math.log10(lambdas[1]), f1);
+            if (conf[0][1] == 0) break;
+            else lambdas[1] *= 10;
         }
         ds.addSeries(series);
-        Utils.writeChartForDS("Lambda for classifying as non-spam to precision", ds, "Lambdas[1]", "Precision");
+        Utils.writeChartForDS("Lambda for classifying as non-spam to f1", ds, "log10(Lambdas[1])", "F1");
     }
 
 }

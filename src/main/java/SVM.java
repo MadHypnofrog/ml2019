@@ -1,15 +1,10 @@
 import com.opencsv.CSVReader;
 import javafx.util.Pair;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class SVM {
@@ -54,13 +49,11 @@ public class SVM {
                             else mu = R;
                         }
                         F += -0.5 * (2 * muMin * mu - a * mu * mu);
-                    }
-                    else if (a > 0) {
+                    } else if (a > 0) {
                         if (z >= L && z <= R) {
                             if (z - L > R - z) mu = L;
                             else mu = R;
-                        }
-                        else {
+                        } else {
                             if (z < L) mu = R;
                             else mu = L;
                         }
@@ -84,22 +77,18 @@ public class SVM {
             if (F - oldF < 10e-70) break;
         }
         double b = 0;
-        double trueB = 0;
-        int cnt = 0;
         for (int i = 0; i < n; i++) {
             if (Math.abs(res[i]) < 10e-7) continue;
-            cnt++;
             double bb = 0;
             for (int j = 0; j < n; j++) {
                 bb += kernel[i][j] * res[j];
             }
             bb *= target[i];
-            trueB += target[i] - bb;
+            b = target[i] - bb;
             break;
         }
-        b = trueB / cnt;
         int[][] conf = new int[2][2];
-        for (Integer i: test) {
+        for (Integer i : test) {
             double sum = 0;
             for (int k = 0; k < n; k++) {
                 sum += res[k] * kernel[i][k];
@@ -135,7 +124,7 @@ public class SVM {
     private static void findOptimalForFile(String fileName) throws Exception {
         String[] tokens = fileName.split("/");
         String name = tokens[tokens.length - 1].split("\\.")[0];
-        BufferedWriter log = new BufferedWriter(new FileWriter("l2og-" + name + ".txt"));
+        BufferedWriter log = new BufferedWriter(new FileWriter("log-" + name + ".txt"));
         {
             List<String[]> values = new CSVReader(new FileReader(fileName)).readAll();
             values.remove(0);  // header
