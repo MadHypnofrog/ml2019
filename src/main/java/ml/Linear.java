@@ -1,3 +1,5 @@
+package ml;
+
 import javafx.util.Pair;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
@@ -8,27 +10,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
+import static ml.Utils.nextInt;
+
 public class Linear {
 
-    public static double nextInt(BufferedReader sc) throws IOException {
-        double a = 0;
-        int k = 1;
-        int b = sc.read();
-        while (b < '0' || b > '9') {
-            if (b == '-') k = -1;
-            b = sc.read();
-        }
-        while (b >= '0' && b <= '9') {
-            a = a * 10 + (b - '0');
-            b = sc.read();
-        }
-        return a * k;
-    }
-
-    public static Pair<double[], Double> calcGradientDescent(int num, double matrixQ,
-                                               int m, int n, double testN, double[][] matrix, double[] target,
-                                               double[][] testMatrix, double[] testTarget, double minY, double minYTest,
-                                               double maxY, double maxYTest) {
+    private static Pair<double[], Double> calcGradientDescent(int num, double matrixQ,
+                                                              int m, int n, double testN, double[][] matrix, double[] target,
+                                                              double[][] testMatrix, double[] testTarget, double minY, double minYTest,
+                                                              double maxY, double maxYTest) {
         Random R = new Random();
         double[] res = new double[m + 1];
         for (int i = 0; i < m + 1; i++) res[i] = R.nextDouble() / n;
@@ -39,9 +28,9 @@ public class Linear {
         double step = 10e-35;
         XYSeriesCollection ds = new XYSeriesCollection();
         XYSeriesCollection ds2 = new XYSeriesCollection();
-        XYSeries series = new XYSeries("1");
-        XYSeries series2 = new XYSeries("2");
-        XYSeries series3 = new XYSeries("3");
+        XYSeries series = new XYSeries("Gradient descent");
+        XYSeries series2 = new XYSeries("Gradient descent");
+        XYSeries series3 = new XYSeries("Pseudoinverse matrix");
         double qTest = 0;
         for (int iter = 0; iter < 3000; iter++) {
             for (int i = 0; i < n; i++) {
@@ -129,16 +118,17 @@ public class Linear {
         return target;
     }
 
-    public static Pair<double[], Double> calcPseudoReverse(double testN, double[][] matrix, double[] target,
-                                                           double[][] testMatrix, double[] testTarget, double minYTest,
-                                                           double maxYTest) {
+    private static Pair<double[], Double> calcPseudoReverse(double testN, double[][] matrix, double[] target,
+                                                            double[][] testMatrix, double[] testTarget, double minYTest,
+                                                            double maxYTest) {
         double[][] targetT = new double[target.length][1];
         for (int i = 0; i < target.length; i++) targetT[i][0] = target[i];
         double[] right = Utils.transpose(Utils.multiply(Utils.transpose(matrix), targetT))[0];
         double[] res = solveGauss(Utils.multiply(Utils.transpose(matrix), matrix), right);
         double qTest = 0;
         for (int i = 0; i < testN; i++) {
-            qTest += (Utils.scalarProduct(testMatrix[i], res) - testTarget[i]) * (Utils.scalarProduct(testMatrix[i], res) - testTarget[i]);
+            qTest += (Utils.scalarProduct(testMatrix[i], res) - testTarget[i])
+                    * (Utils.scalarProduct(testMatrix[i], res) - testTarget[i]);
         }
         qTest /= testN;
         return new Pair<>(res, Math.sqrt(qTest) / (maxYTest - minYTest));

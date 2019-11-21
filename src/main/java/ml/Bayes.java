@@ -1,3 +1,5 @@
+package ml;
+
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
@@ -21,7 +23,7 @@ import java.util.stream.Stream;
 public class Bayes {
 
     public static List<Integer> classify(int numClasses, double[] lambdas, double alpha,
-                                    List<Integer> classes, List<String> messages, List<String> testMessages) {
+                                         List<Integer> classes, List<String> messages, List<String> testMessages) {
         int n = messages.size();
         double[] classesFrequency = new double[numClasses];
         double[] totalWords = new double[numClasses];
@@ -71,7 +73,7 @@ public class Bayes {
         List<List<Integer>> classes = new ArrayList<>();
         for (int i = 1; i < 11; i++) {
             Stream<Path> paths = Files.walk(Paths.get(System.getProperty("user.dir") + "/src/main/resources/part" + i))
-                        .filter(Files::isRegularFile);
+                    .filter(Files::isRegularFile);
             classes.add(paths.map(path -> {
                 if (path.getFileName().toString().contains("legit")) {
                     return 1;

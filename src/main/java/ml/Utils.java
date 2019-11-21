@@ -1,3 +1,5 @@
+package ml;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
@@ -7,6 +9,7 @@ import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.XYSeriesCollection;
 
 import java.awt.*;
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -16,6 +19,21 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Utils {
+
+    public static int nextInt(BufferedReader sc) throws IOException {
+        int a = 0;
+        int k = 1;
+        int b = sc.read();
+        while (b < '0' || b > '9') {
+            if (b == '-') k = -1;
+            b = sc.read();
+        }
+        while (b >= '0' && b <= '9') {
+            a = a * 10 + (b - '0');
+            b = sc.read();
+        }
+        return a * k;
+    }
 
     public static double euclidean(double[] fst, double[] snd) {
         double res = 0;
@@ -129,8 +147,6 @@ public class Utils {
                 totalSum += cm[i][j];
             }
         }
-        double precision = 0;
-        double recall = 0;
         double fT = 0;
         for (int i = 0; i < k; i++) {
             int fp = 0;
@@ -192,7 +208,7 @@ public class Utils {
 
     public static void writeChartForDS(String chartName, XYSeriesCollection ds, String xName, String yName) {
         JFreeChart ch = ChartFactory.createXYLineChart(chartName,
-                xName, yName, ds, PlotOrientation.VERTICAL, false, false, false);
+                xName, yName, ds, PlotOrientation.VERTICAL, true, false, false);
         final XYPlot plot = ch.getXYPlot();
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         renderer.setSeriesPaint(0, Color.RED);

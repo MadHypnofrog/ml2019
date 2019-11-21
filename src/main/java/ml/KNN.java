@@ -1,3 +1,5 @@
+package ml;
+
 import com.opencsv.CSVReader;
 import javafx.util.Pair;
 import org.jfree.data.xy.XYSeries;
@@ -130,12 +132,12 @@ public class KNN {
             }
         }
         String[] distances = new String[] {
-                  "euclidean"
+                "euclidean"
                 , "manhattan"
                 , "chebyshev"
         };
         String[] kernels = new String[] {
-                  "uniform"
+                "uniform"
                 , "triangular"
                 , "epanechnikov"
                 , "quartic"
