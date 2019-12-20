@@ -17,16 +17,16 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 import static ml.Utils.nextInt;
 
 public class DecisionTree {
 
-    final private static int ENSEMBLE_SIZE = 3000;
+    final private static int ENSEMBLE_SIZE = 1000;
 
     private static class Node {
 
@@ -50,7 +50,7 @@ public class DecisionTree {
     }
 
     private static Node buildRecursiveTree(int[][] objects, int maxH, int curH, int numClasses,
-                                           int features, Set<Integer> skipped) {
+                                           int features, boolean randomFeats, HashSet<Integer> skipped) {
         int[] classes = new int[numClasses];
         for (int[] obj : objects) classes[obj[features] - 1]++;
         int maxC = 0;
@@ -62,6 +62,16 @@ public class DecisionTree {
         }
         if (curH == maxH) {
             return new Node(maxC + 1);
+        }
+        if (randomFeats) {
+            skipped = new HashSet<>();
+            Random R = new Random();
+            for (int j = 0; j < features; j++) {
+                skipped.add(j);
+            }
+            while (skipped.size() != features - (int) Math.sqrt(features)) {
+                skipped.remove(R.nextInt(features));
+            }
         }
         int splitClass = -1;
         int splitIndex = -1;
@@ -112,9 +122,9 @@ public class DecisionTree {
         Arrays.sort(objects, Comparator.comparingInt(a -> a[fCl]));
         return new Node
                 (buildRecursiveTree(Arrays.copyOfRange(objects, 0, splitIndex),
-                        maxH, curH + 1, numClasses, features, skipped),
+                        maxH, curH + 1, numClasses, features, randomFeats, skipped),
                         buildRecursiveTree(Arrays.copyOfRange(objects, splitIndex, objects.length),
-                                maxH, curH + 1, numClasses, features, skipped),
+                                maxH, curH + 1, numClasses, features, randomFeats, skipped),
                         splitClass, value);
     }
 
@@ -154,13 +164,7 @@ public class DecisionTree {
             }
 
             int featTest = nextInt(rTest);
-            if (features != featTest) {
-                System.out.println("Incorrect number of features in set " + set);
-            }
             int numClTest = nextInt(rTest);
-            if (numClasses != numClTest) {
-                System.out.println("Incorrect number of classes in set " + set);
-            }
             int nTest = nextInt(rTest);
             int[][] test = new int[nTest][features + 1];
             for (int i = 0; i < nTest; i++) {
@@ -176,7 +180,7 @@ public class DecisionTree {
             double maxF = 0;
             double maxFTrain = 0;
             for (int height = 0; height < 50; height++) {
-                Node tree = buildRecursiveTree(train, height, 0, numClasses, features, new HashSet<>());
+                Node tree = buildRecursiveTree(train, height, 0, numClasses, features, false, new HashSet<>());
                 int[][] conf = new int[numClasses][numClasses];
                 for (int i = 0; i < nTest; i++) {
                     conf[classify(test[i], tree) - 1][test[i][features] - 1]++;
@@ -197,7 +201,7 @@ public class DecisionTree {
                 }
                 seriesTrain.add(height, f1Train);
                 seriesTest.add(height, f1);
-                if (f1Train == 1) break;
+                if (Math.abs(f1Train - 1) < 10e-10) break;
             }
             dsSet.addSeries(seriesTrain);
             dsSet.addSeries(seriesTest);
@@ -207,34 +211,106 @@ public class DecisionTree {
             log.write(String.format("Optimal height: %d, f1Test = %f, f1Train = %f\n", maxH, maxF, maxFTrain));
             log.flush();
 
-            List<Node> ensemble = new ArrayList<>();
-            Random R = new Random();
-            for (int i = 0; i < ENSEMBLE_SIZE; i++) {
-                int[][] trainObjects = new int[nTrain][];
-                for (int j = 0; j < nTrain; j++) {
-                    trainObjects[j] = train[R.nextInt(nTrain)];
+            {
+                List<Node> ensemble = new ArrayList<>();
+                Random R = new Random();
+                for (int i = 0; i < ENSEMBLE_SIZE; i++) {
+                    int[][] trainObjects = new int[nTrain][];
+                    for (int j = 0; j < nTrain; j++) {
+                        trainObjects[j] = train[R.nextInt(nTrain)];
+                    }
+                    ensemble.add(buildRecursiveTree(trainObjects, 200, 0, numClasses, features, true, new HashSet<>()));
                 }
-                HashSet<Integer> skipped = new HashSet<>();
-                for (int j = 0; j < features; j++) {
-                    skipped.add(j);
+                int[][] conf = new int[numClasses][numClasses];
+                for (int i = 0; i < nTest; i++) {
+                    conf[classifyEnsemble(test[i], ensemble) - 1][test[i][features] - 1]++;
                 }
-                while (skipped.size() != features - (int) Math.sqrt(features)) {
-                    skipped.remove(R.nextInt(features));
+                double f1 = Utils.fmeasure(conf);
+                int[][] confTrain = new int[numClasses][numClasses];
+                for (int i = 0; i < nTrain; i++) {
+                    confTrain[classifyEnsemble(train[i], ensemble) - 1][train[i][features] - 1]++;
                 }
-                ensemble.add(buildRecursiveTree(trainObjects, 200, 0, numClasses, features, skipped));
+                double f1Train = Utils.fmeasure(confTrain);
+                log.write(String.format("Using random forest with random features in each node and bootstrap: " +
+                        "f1Test = %f, f1Train = %f\n", f1, f1Train));
+                log.flush();
             }
-            int[][] conf = new int[numClasses][numClasses];
-            for (int i = 0; i < nTest; i++) {
-                conf[classifyEnsemble(test[i], ensemble) - 1][test[i][features] - 1]++;
+            {
+                List<Node> ensemble = new ArrayList<>();
+                for (int i = 0; i < ENSEMBLE_SIZE; i++) {
+                    ensemble.add(buildRecursiveTree(train, 200, 0, numClasses, features, true, new HashSet<>()));
+                }
+                int[][] conf = new int[numClasses][numClasses];
+                for (int i = 0; i < nTest; i++) {
+                    conf[classifyEnsemble(test[i], ensemble) - 1][test[i][features] - 1]++;
+                }
+                double f1 = Utils.fmeasure(conf);
+                int[][] confTrain = new int[numClasses][numClasses];
+                for (int i = 0; i < nTrain; i++) {
+                    confTrain[classifyEnsemble(train[i], ensemble) - 1][train[i][features] - 1]++;
+                }
+                double f1Train = Utils.fmeasure(confTrain);
+                log.write(String.format("Using random forest with random features in each node: " +
+                        "f1Test = %f, f1Train = %f\n", f1, f1Train));
+                log.flush();
             }
-            double f1 = Utils.fmeasure(conf);
-            int[][] confTrain = new int[numClasses][numClasses];
-            for (int i = 0; i < nTrain; i++) {
-                confTrain[classifyEnsemble(train[i], ensemble) - 1][train[i][features] - 1]++;
+            {
+                List<Node> ensemble = new ArrayList<>();
+                for (int i = 0; i < ENSEMBLE_SIZE; i++) {
+                    HashSet<Integer> skipped = new HashSet<>();
+                    Random R = new Random();
+                    for (int j = 0; j < features; j++) {
+                        skipped.add(j);
+                    }
+                    while (skipped.size() != features - (int) Math.sqrt(features)) {
+                        skipped.remove(R.nextInt(features));
+                    }
+                    ensemble.add(buildRecursiveTree(train, 200, 0, numClasses, features, false, skipped));
+                }
+                int[][] conf = new int[numClasses][numClasses];
+                for (int i = 0; i < nTest; i++) {
+                    conf[classifyEnsemble(test[i], ensemble) - 1][test[i][features] - 1]++;
+                }
+                double f1 = Utils.fmeasure(conf);
+                int[][] confTrain = new int[numClasses][numClasses];
+                for (int i = 0; i < nTrain; i++) {
+                    confTrain[classifyEnsemble(train[i], ensemble) - 1][train[i][features] - 1]++;
+                }
+                double f1Train = Utils.fmeasure(confTrain);
+                log.write(String.format("Using random forest with random features in each tree: " +
+                        "f1Test = %f, f1Train = %f\n", f1, f1Train));
+                log.flush();
             }
-            double f1Train = Utils.fmeasure(confTrain);
-            log.write(String.format("Using random forest: f1Test = %f, f1Train = %f\n\n", f1, f1Train));
-            log.flush();
+            {
+                List<Node> ensemble = new ArrayList<>();
+                for (int i = 0; i < ENSEMBLE_SIZE; i++) {
+                    Random R = new Random();
+                    int setSize = (int) Math.pow(nTrain, 0.7);
+                    HashSet<Integer> indices = new HashSet<>();
+                    while (indices.size() != setSize) {
+                        indices.add(R.nextInt(nTrain));
+                    }
+                    int[][] trainObjects = new int[setSize][];
+                    Iterator<Integer> it = indices.iterator();
+                    for (int j = 0; j < setSize; j++) {
+                        trainObjects[j] = train[it.next()];
+                    }
+                    ensemble.add(buildRecursiveTree(trainObjects, 200, 0, numClasses, features, false, new HashSet<>()));
+                }
+                int[][] conf = new int[numClasses][numClasses];
+                for (int i = 0; i < nTest; i++) {
+                    conf[classifyEnsemble(test[i], ensemble) - 1][test[i][features] - 1]++;
+                }
+                double f1 = Utils.fmeasure(conf);
+                int[][] confTrain = new int[numClasses][numClasses];
+                for (int i = 0; i < nTrain; i++) {
+                    confTrain[classifyEnsemble(train[i], ensemble) - 1][train[i][features] - 1]++;
+                }
+                double f1Train = Utils.fmeasure(confTrain);
+                log.write(String.format("Using random forest with random elements: " +
+                        "f1Test = %f, f1Train = %f\n\n", f1, f1Train));
+                log.flush();
+            }
 
         }
         ds.addSeries(series);
@@ -246,10 +322,13 @@ public class DecisionTree {
         for (int set = 1; set <= 21; set++) {
             Path graph = new File("Set " + set + ".png").toPath();
             if (set == minOptHeightSet) {
+                Files.deleteIfExists(graph.resolveSibling("min-" + set + ".png"));
                 Files.move(graph, graph.resolveSibling("min-" + set + ".png"));
             } else if (set == midOptHeightSet) {
+                Files.deleteIfExists(graph.resolveSibling("mid-" + set + ".png"));
                 Files.move(graph, graph.resolveSibling("mid-" + set + ".png"));
             } else if (set == maxOptHeightSet) {
+                Files.deleteIfExists(graph.resolveSibling("max-" + set + ".png"));
                 Files.move(graph, graph.resolveSibling("max-" + set + ".png"));
             } else {
                 Files.delete(graph);

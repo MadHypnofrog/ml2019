@@ -127,28 +127,54 @@ public class SVM {
         String[] tokens = fileName.split("/");
         String name = tokens[tokens.length - 1].split("\\.")[0];
         BufferedWriter log = new BufferedWriter(new FileWriter("log-" + name + ".txt"));
-        {
-            List<String[]> values = new CSVReader(new FileReader(fileName)).readAll();
-            values.remove(0);  // header
-            int samples = values.size();
-            int attributes = values.get(0).length - 1;
-            double[][] objects = new double[samples][attributes];
-            int[] classes = new int[samples];
-            for (int i = 0; i < samples; i++) {
-                for (int j = 0; j < attributes; j++) {
-                    objects[i][j] = Double.valueOf(values.get(i)[j]);
-                }
-                classes[i] = values.get(i)[attributes].equals("P") ? 1 : -1;
+
+        List<String[]> values = new CSVReader(new FileReader(fileName)).readAll();
+        values.remove(0);  // header
+        int samples = values.size();
+        int attributes = values.get(0).length - 1;
+        double[][] objects = new double[samples][attributes];
+        int[] classes = new int[samples];
+        for (int i = 0; i < samples; i++) {
+            for (int j = 0; j < attributes; j++) {
+                objects[i][j] = Double.valueOf(values.get(i)[j]);
             }
-            int batchSize = samples / 10;
-            double[][] kernel = new double[samples][samples];
-            // Linear
-            {
-                double maxF = 0;
-                int maxC = 0;
+            classes[i] = values.get(i)[attributes].equals("P") ? 1 : -1;
+        }
+        int batchSize = samples / 10;
+        double[][] kernel = new double[samples][samples];
+        // Linear
+        {
+            double maxF = 0;
+            int maxC = 0;
+            for (int i = 0; i < samples; i++) {
+                for (int j = 0; j < samples; j++) {
+                    kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
+                }
+            }
+            for (int c = 1; c < 15; c++) {
+                double F = calcFMeasure(samples, batchSize, kernel, classes, c);
+                if (F > maxF) {
+                    maxF = F;
+                    maxC = c;
+                }
+                log.write("Linear kernel, c = " + c + ": F = " + F + "\n");
+                log.flush();
+            }
+            log.write("Linear kernel, optimal c = " + maxC + ": F = " + maxF + "\n");
+            double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
+            for (double d : linearFormula) log.write(String.format("%.9f ", d));
+            log.write("\n\n");
+            log.flush();
+        }
+        //Polynomial with degree equal to p
+        {
+            double maxF = 0;
+            int maxP = 0;
+            int maxC = 0;
+            for (int p = 2; p < 15; p++) {
                 for (int i = 0; i < samples; i++) {
                     for (int j = 0; j < samples; j++) {
-                        kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
+                        kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
                     }
                 }
                 for (int c = 1; c < 15; c++) {
@@ -156,122 +182,96 @@ public class SVM {
                     if (F > maxF) {
                         maxF = F;
                         maxC = c;
+                        maxP = p;
                     }
-                    log.write("Linear kernel, c = " + c + ": F = " + F + "\n");
+                    log.write("Polynomial with degree equal to p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
                     log.flush();
                 }
-                log.write("Linear kernel, optimal c = " + maxC + ": F = " + maxF + "\n");
-                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
-                for (double d : linearFormula) log.write(String.format("%.9f ", d));
-                log.write("\n\n");
-                log.flush();
             }
-            //Polynomial with degree equal to p
-            {
-                double maxF = 0;
-                int maxP = 0;
-                int maxC = 0;
-                for (int p = 2; p < 15; p++) {
-                    for (int i = 0; i < samples; i++) {
-                        for (int j = 0; j < samples; j++) {
-                            kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
-                        }
-                    }
-                    for (int c = 1; c < 15; c++) {
-                        double F = calcFMeasure(samples, batchSize, kernel, classes, c);
-                        if (F > maxF) {
-                            maxF = F;
-                            maxC = c;
-                            maxP = p;
-                        }
-                        log.write("Polynomial with degree equal to p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
-                        log.flush();
-                    }
+            log.write("Polynomial kernel, optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
+            for (int i = 0; i < samples; i++) {
+                for (int j = 0; j < samples; j++) {
+                    kernel[i][j] = 0;
+                    kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
+                    for (int p = 1; p < maxP; p++) kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
                 }
-                log.write("Polynomial kernel, optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
-                for (int i = 0; i < samples; i++) {
-                    for (int j = 0; j < samples; j++) {
-                        kernel[i][j] = 0;
-                        kernel[i][j] = classes[i] * classes[j] * Utils.scalarProduct(objects[i], objects[j]);
-                        for (int p = 1; p < maxP; p++) kernel[i][j] *= Utils.scalarProduct(objects[i], objects[j]);
-                    }
-                }
-                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
-                for (double d : linearFormula) log.write(String.format("%.9f ", d));
-                log.write("\n\n");
-                log.flush();
             }
-            //Polynomial with degree less than p
-            {
-                double maxF = 0;
-                int maxP = 0;
-                int maxC = 0;
-                for (int p = 1; p < 15; p++) {
-                    for (int i = 0; i < samples; i++) {
-                        for (int j = 0; j < samples; j++) {
-                            double sc = Utils.scalarProduct(objects[i], objects[j]) + 1;
-                            kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, p);
-                        }
-                    }
-                    for (int c = 1; c < 15; c++) {
-                        double F = calcFMeasure(samples, batchSize, kernel, classes, c);
-                        if (F > maxF) {
-                            maxF = F;
-                            maxC = c;
-                            maxP = p;
-                        }
-                        log.write("Polynomial with degree less than p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
-                        log.flush();
-                    }
-                }
-                log.write("Polynomial kernel (with degree less than), optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
+            double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
+            for (double d : linearFormula) log.write(String.format("%.9f ", d));
+            log.write("\n\n");
+            log.flush();
+        }
+        //Polynomial with degree less than p
+        {
+            double maxF = 0;
+            int maxP = 0;
+            int maxC = 0;
+            for (int p = 1; p < 15; p++) {
                 for (int i = 0; i < samples; i++) {
                     for (int j = 0; j < samples; j++) {
                         double sc = Utils.scalarProduct(objects[i], objects[j]) + 1;
-                        kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, maxP);
+                        kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, p);
                     }
                 }
-                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
-                for (double d : linearFormula) log.write(String.format("%.9f ", d));
-                log.write("\n\n");
-                log.flush();
+                for (int c = 1; c < 15; c++) {
+                    double F = calcFMeasure(samples, batchSize, kernel, classes, c);
+                    if (F > maxF) {
+                        maxF = F;
+                        maxC = c;
+                        maxP = p;
+                    }
+                    log.write("Polynomial with degree less than p = " + p + " kernel, c = " + c + ": F = " + F + "\n");
+                    log.flush();
+                }
             }
-            //Radial
-            {
-                double maxF = 0;
-                double maxB = 0;
-                int maxC = 0;
-                for (double b = 0.03; b < 1; b += 0.03) {
-                    for (int i = 0; i < samples; i++) {
-                        for (int j = 0; j < samples; j++) {
-                            kernel[i][j] = classes[i] * classes[j] *
-                                    Math.exp(-b * Math.pow(Utils.norm(Utils.subtract(objects[i], objects[j])), 2));
-                        }
-                    }
-                    for (int c = 1; c < 15; c += 3) {
-                        double F = calcFMeasure(samples, batchSize, kernel, classes, c);
-                        if (F > maxF) {
-                            maxF = F;
-                            maxC = c;
-                            maxB = b;
-                        }
-                        log.write("Radial kernel, b = " + b + ", c = " + c + ": F = " + F + "\n");
-                        log.flush();
-                    }
+            log.write("Polynomial kernel (with degree less than), optimal p = " + maxP + ", c = " + maxC + ": F = " + maxF + "\n");
+            for (int i = 0; i < samples; i++) {
+                for (int j = 0; j < samples; j++) {
+                    double sc = Utils.scalarProduct(objects[i], objects[j]) + 1;
+                    kernel[i][j] = classes[i] * classes[j] * Math.pow(sc, maxP);
                 }
-                log.write("Radial kernel, optimal b = " + maxB + ", c = " + maxC + ": F = " + maxF + "\n");
+            }
+            double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
+            for (double d : linearFormula) log.write(String.format("%.9f ", d));
+            log.write("\n\n");
+            log.flush();
+        }
+        //Radial
+        {
+            double maxF = 0;
+            double maxB = 0;
+            int maxC = 0;
+            for (double b = 0.03; b < 1; b += 0.03) {
                 for (int i = 0; i < samples; i++) {
                     for (int j = 0; j < samples; j++) {
                         kernel[i][j] = classes[i] * classes[j] *
-                                Math.exp(-maxB * Math.pow(Utils.norm(Utils.subtract(objects[i], objects[j])), 2));
+                                Math.exp(-b * Math.pow(Utils.norm(Utils.subtract(objects[i], objects[j])), 2));
                     }
                 }
-                double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
-                for (double d : linearFormula) log.write(String.format("%.9f ", d));
-                log.write("\n\n");
-                log.flush();
+                for (int c = 1; c < 15; c += 3) {
+                    double F = calcFMeasure(samples, batchSize, kernel, classes, c);
+                    if (F > maxF) {
+                        maxF = F;
+                        maxC = c;
+                        maxB = b;
+                    }
+                    log.write("Radial kernel, b = " + b + ", c = " + c + ": F = " + F + "\n");
+                    log.flush();
+                }
             }
+            log.write("Radial kernel, optimal b = " + maxB + ", c = " + maxC + ": F = " + maxF + "\n");
+            for (int i = 0; i < samples; i++) {
+                for (int j = 0; j < samples; j++) {
+                    kernel[i][j] = classes[i] * classes[j] *
+                            Math.exp(-maxB * Math.pow(Utils.norm(Utils.subtract(objects[i], objects[j])), 2));
+                }
+            }
+            double[] linearFormula = train(samples, kernel, classes, maxC, new ArrayList<>()).getValue();
+            for (double d : linearFormula) log.write(String.format("%.9f ", d));
+            log.write("\n\n");
+            log.flush();
         }
+
     }
 
     public static void main(String[] args) throws Exception {

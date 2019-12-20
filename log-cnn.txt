@@ -1,0 +1,5 @@
+3õ3õ5-Pool-3x3x10-Pool-3x3x15-7x7x10-SoftArgMax - 0.06 çà 100ê èòåðàöèé, ìèíèìóì ãäå-òî 0.058 íà ~95ê
+5x5x10-Pool-5x5x20-Pool-3x3x30-7x7x10-SoftArgMax - 0.07
+3x3x10-3x3x10-Pool-3x3x15-Pool-3x3x20-7x7x10-SoftArgMax - 0.05, íî ñèëüíî äîëüøå îáó÷àåòñÿ
+5õ5õ32-5õ5õ32-Pool-3x3x64-3x3x64-Pool-7x7x10-SoftArgMax - 0.12 çà 10ê è î÷åíü ìåäëåííî
+3õ3õ5-3õ3õ5-Pool-3x3x10-3x3x10-Pool-7x7x10-SoftArgMax - 0.06 çà 70ê è òàì è âèñèò, äîñòàòî÷íî áûñòðî
